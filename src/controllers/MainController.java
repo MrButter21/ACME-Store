@@ -14,6 +14,7 @@ public class MainController implements ActionListener {
     
     MainView mainView;
     CustomersView customersView;
+    SuppliersView suppliersView;
     
     JPanel paneArray [];
 
@@ -23,6 +24,7 @@ public class MainController implements ActionListener {
         this.paneArray = paneArray;
         
         this.mainView.jmi_customers.addActionListener(this);
+        this.mainView.jmi_suppliers.addActionListener(this);
         this.mainView.jmi_exit.addActionListener(this);
         
         initView();
@@ -32,6 +34,8 @@ public class MainController implements ActionListener {
     public void actionPerformed(ActionEvent x) {
         if(x.getSource() == mainView.jmi_customers)
             customersPane();
+        else if(x.getSource() == mainView.jmi_suppliers)
+            suppliersPane();
         else if(x.getSource() == mainView.jmi_exit)
             close();
     }
@@ -44,6 +48,12 @@ public class MainController implements ActionListener {
     
     public void customersPane() {
         mainView.setContentPane(paneArray[0]);
+        mainView.revalidate();
+        mainView.repaint();
+    }
+    
+    public void suppliersPane() {
+        mainView.setContentPane(paneArray[1]);
         mainView.revalidate();
         mainView.repaint();
     }

@@ -31,6 +31,7 @@ public class MainView extends javax.swing.JFrame {
         jmb_menu = new javax.swing.JMenuBar();
         jm_options = new javax.swing.JMenu();
         jmi_customers = new javax.swing.JMenuItem();
+        jmi_suppliers = new javax.swing.JMenuItem();
         jmi_exit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -42,7 +43,7 @@ public class MainView extends javax.swing.JFrame {
         jPanel.setLayout(jPanelLayout);
         jPanelLayout.setHorizontalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 765, Short.MAX_VALUE)
+            .addGap(0, 775, Short.MAX_VALUE)
         );
         jPanelLayout.setVerticalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -70,6 +71,19 @@ public class MainView extends javax.swing.JFrame {
             }
         });
         jm_options.add(jmi_customers);
+
+        jmi_suppliers.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_suppliers.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jmi_suppliers.setForeground(new java.awt.Color(255, 255, 255));
+        jmi_suppliers.setText("Proveedores");
+        jmi_suppliers.setBorder(null);
+        jmi_suppliers.setBorderPainted(false);
+        jmi_suppliers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_suppliersActionPerformed(evt);
+            }
+        });
+        jm_options.add(jmi_suppliers);
 
         jmi_exit.setBackground(new java.awt.Color(0, 121, 107));
         jmi_exit.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
@@ -100,6 +114,10 @@ public class MainView extends javax.swing.JFrame {
     private void jmi_customersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_customersActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_customersActionPerformed
+
+    private void jmi_suppliersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_suppliersActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_suppliersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,5 +160,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JMenuBar jmb_menu;
     public javax.swing.JMenuItem jmi_customers;
     public javax.swing.JMenuItem jmi_exit;
+    public javax.swing.JMenuItem jmi_suppliers;
     // End of variables declaration//GEN-END:variables
 }

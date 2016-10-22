@@ -13,8 +13,13 @@ public class Main {
         CustomersView customersView = new CustomersView();
         CustomersController customersController = new CustomersController(customersModel, customersView);
         
-        JPanel paneArray[] = new JPanel[1];
+        SuppliersModel suppliersModel = new SuppliersModel();
+        SuppliersView suppliersView = new SuppliersView();
+        SuppliersController suppliersController = new SuppliersController(suppliersModel, suppliersView);
+        
+        JPanel paneArray[] = new JPanel[2];
         paneArray[0] = customersView;
+        paneArray[1] = suppliersView;
         
         MainModel mainModel = new MainModel();
         MainView mainView = new MainView();

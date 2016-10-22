@@ -9,12 +9,12 @@ package views;
  *
  * @author Sergio
  */
-public class CustomersView extends javax.swing.JPanel {
+public class SuppliersView extends javax.swing.JPanel {
 
     /**
      * Creates new form CustomersView
      */
-    public CustomersView() {
+    public SuppliersView() {
         initComponents();
     }
 
@@ -33,25 +33,23 @@ public class CustomersView extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jtf_name = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jtf_surname1 = new javax.swing.JTextField();
+        jtf_rfc = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jtf_surname2 = new javax.swing.JTextField();
-        jtf_phone = new javax.swing.JTextField();
+        jtf_street = new javax.swing.JTextField();
+        jtf_number = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jtf_email = new javax.swing.JTextField();
+        jtf_suburb = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jtf_state = new javax.swing.JTextField();
-        jtf_rfc = new javax.swing.JTextField();
-        jtf_street = new javax.swing.JTextField();
-        jtf_number = new javax.swing.JTextField();
-        jtf_suburb = new javax.swing.JTextField();
         jtf_city = new javax.swing.JTextField();
+        jtf_state = new javax.swing.JTextField();
+        jtf_contact = new javax.swing.JTextField();
+        jtf_phone = new javax.swing.JTextField();
+        jtf_email = new javax.swing.JTextField();
         jb_add = new javax.swing.JButton();
         jb_remove = new javax.swing.JButton();
         jb_edit = new javax.swing.JButton();
@@ -61,7 +59,7 @@ public class CustomersView extends javax.swing.JPanel {
         jb_next = new javax.swing.JButton();
         jb_last = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jt_customersTable = new javax.swing.JTable();
+        jt_suppliersTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(0, 121, 107));
 
@@ -69,11 +67,11 @@ public class CustomersView extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CLIENTES");
+        jLabel1.setText("PROVEEDORES");
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("ID Cliente");
+        jLabel2.setText("ID Proveedor");
 
         jtf_id.setBackground(new java.awt.Color(0, 150, 136));
         jtf_id.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
@@ -91,73 +89,16 @@ public class CustomersView extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Apellido paterno");
-
-        jtf_surname1.setBackground(new java.awt.Color(0, 150, 136));
-        jtf_surname1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_surname1.setForeground(new java.awt.Color(255, 255, 255));
-        jtf_surname1.setBorder(null);
-
-        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Apellido materno");
-
-        jtf_surname2.setBackground(new java.awt.Color(0, 150, 136));
-        jtf_surname2.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_surname2.setForeground(new java.awt.Color(255, 255, 255));
-        jtf_surname2.setBorder(null);
-
-        jtf_phone.setBackground(new java.awt.Color(0, 150, 136));
-        jtf_phone.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_phone.setForeground(new java.awt.Color(255, 255, 255));
-        jtf_phone.setBorder(null);
-
-        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Teléfono");
-
-        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Email");
-
-        jtf_email.setBackground(new java.awt.Color(0, 150, 136));
-        jtf_email.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_email.setForeground(new java.awt.Color(255, 255, 255));
-        jtf_email.setBorder(null);
-
-        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Ciudad");
-
-        jLabel9.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Estado");
-
-        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("RFC");
-
-        jLabel11.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Calle");
-
-        jLabel12.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Número");
-
-        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Colonia");
-
-        jtf_state.setBackground(new java.awt.Color(0, 150, 136));
-        jtf_state.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_state.setForeground(new java.awt.Color(255, 255, 255));
-        jtf_state.setBorder(null);
+        jLabel4.setText("RFC");
 
         jtf_rfc.setBackground(new java.awt.Color(0, 150, 136));
         jtf_rfc.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_rfc.setForeground(new java.awt.Color(255, 255, 255));
         jtf_rfc.setBorder(null);
+
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Calle");
 
         jtf_street.setBackground(new java.awt.Color(0, 150, 136));
         jtf_street.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
@@ -169,15 +110,63 @@ public class CustomersView extends javax.swing.JPanel {
         jtf_number.setForeground(new java.awt.Color(255, 255, 255));
         jtf_number.setBorder(null);
 
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Número");
+
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Colonia");
+
         jtf_suburb.setBackground(new java.awt.Color(0, 150, 136));
         jtf_suburb.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_suburb.setForeground(new java.awt.Color(255, 255, 255));
         jtf_suburb.setBorder(null);
 
+        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Email");
+
+        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Ciudad");
+
+        jLabel11.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Estado");
+
+        jLabel12.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Contacto");
+
+        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Teléfono");
+
         jtf_city.setBackground(new java.awt.Color(0, 150, 136));
         jtf_city.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_city.setForeground(new java.awt.Color(255, 255, 255));
         jtf_city.setBorder(null);
+
+        jtf_state.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_state.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jtf_state.setForeground(new java.awt.Color(255, 255, 255));
+        jtf_state.setBorder(null);
+
+        jtf_contact.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_contact.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jtf_contact.setForeground(new java.awt.Color(255, 255, 255));
+        jtf_contact.setBorder(null);
+
+        jtf_phone.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_phone.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jtf_phone.setForeground(new java.awt.Color(255, 255, 255));
+        jtf_phone.setBorder(null);
+
+        jtf_email.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_email.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jtf_email.setForeground(new java.awt.Color(255, 255, 255));
+        jtf_email.setBorder(null);
 
         jb_add.setBackground(new java.awt.Color(0, 121, 107));
         jb_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add_user.png"))); // NOI18N
@@ -232,28 +221,28 @@ public class CustomersView extends javax.swing.JPanel {
         jScrollPane1.setBorder(null);
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jt_customersTable.setBackground(new java.awt.Color(0, 150, 136));
-        jt_customersTable.setFont(new java.awt.Font("Trebuchet MS", 0, 10)); // NOI18N
-        jt_customersTable.setForeground(new java.awt.Color(255, 255, 255));
-        jt_customersTable.setModel(new javax.swing.table.DefaultTableModel(
+        jt_suppliersTable.setBackground(new java.awt.Color(0, 150, 136));
+        jt_suppliersTable.setFont(new java.awt.Font("Trebuchet MS", 0, 10)); // NOI18N
+        jt_suppliersTable.setForeground(new java.awt.Color(255, 255, 255));
+        jt_suppliersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nom", "AP", "AM", "Tel", "@", "RFC", "Cal", "#", "Col", "Cd", "Est"
+                "ID", "Nom", "RFC", "Cal", "#", "Col", "Cd", "Est", "Con", "Tel", "@"
             }
         ));
-        jt_customersTable.setGridColor(new java.awt.Color(0, 121, 107));
-        jt_customersTable.setSelectionBackground(new java.awt.Color(0, 121, 107));
-        jt_customersTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setViewportView(jt_customersTable);
+        jt_suppliersTable.setGridColor(new java.awt.Color(0, 121, 107));
+        jt_suppliersTable.setSelectionBackground(new java.awt.Color(0, 121, 107));
+        jt_suppliersTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(jt_suppliersTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -262,9 +251,9 @@ public class CustomersView extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 733, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -273,52 +262,55 @@ public class CustomersView extends javax.swing.JPanel {
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jtf_name))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtf_surname1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtf_surname2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtf_phone))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtf_email))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jb_first)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jb_previous)))
+                                .addComponent(jb_previous))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtf_suburb))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtf_number))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtf_rfc, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtf_street)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtf_rfc))
+                                .addComponent(jtf_city))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtf_street))
+                                .addComponent(jtf_state))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9)
                                     .addComponent(jLabel12)
                                     .addComponent(jLabel13))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jb_next)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
                                         .addComponent(jb_last))
-                                    .addComponent(jtf_state, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
-                                    .addComponent(jtf_city)
-                                    .addComponent(jtf_suburb)
-                                    .addComponent(jtf_number))))
+                                    .addComponent(jtf_phone)
+                                    .addComponent(jtf_contact)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jb_add)
@@ -328,8 +320,7 @@ public class CustomersView extends javax.swing.JPanel {
                                 .addComponent(jb_edit))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(54, 54, 54)
-                                .addComponent(jb_find)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jb_find))))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
         );
@@ -344,7 +335,7 @@ public class CustomersView extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel10)
-                                .addComponent(jtf_rfc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jtf_city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel2)
                                 .addComponent(jtf_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -352,7 +343,7 @@ public class CustomersView extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel11)
-                                .addComponent(jtf_street, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jtf_state, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel3)
                                 .addComponent(jtf_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -360,33 +351,31 @@ public class CustomersView extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel12)
-                                .addComponent(jtf_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jtf_contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel4)
-                                .addComponent(jtf_surname1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jtf_rfc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel13)
-                                .addComponent(jtf_suburb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jtf_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel5)
-                                .addComponent(jtf_surname2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jtf_street, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel6)
-                                .addComponent(jtf_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jtf_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel8)
-                                    .addComponent(jtf_city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jtf_state, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7)
-                                    .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(jtf_suburb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jb_add)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -429,7 +418,6 @@ public class CustomersView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton jb_add;
     public javax.swing.JButton jb_edit;
@@ -439,8 +427,9 @@ public class CustomersView extends javax.swing.JPanel {
     public javax.swing.JButton jb_next;
     public javax.swing.JButton jb_previous;
     public javax.swing.JButton jb_remove;
-    public javax.swing.JTable jt_customersTable;
+    public javax.swing.JTable jt_suppliersTable;
     public javax.swing.JTextField jtf_city;
+    public javax.swing.JTextField jtf_contact;
     public javax.swing.JTextField jtf_email;
     public javax.swing.JTextField jtf_id;
     public javax.swing.JTextField jtf_name;
@@ -450,7 +439,5 @@ public class CustomersView extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_state;
     public javax.swing.JTextField jtf_street;
     public javax.swing.JTextField jtf_suburb;
-    public javax.swing.JTextField jtf_surname1;
-    public javax.swing.JTextField jtf_surname2;
     // End of variables declaration//GEN-END:variables
 }
