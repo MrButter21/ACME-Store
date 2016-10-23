@@ -32,6 +32,7 @@ public class MainView extends javax.swing.JFrame {
         jm_options = new javax.swing.JMenu();
         jmi_customers = new javax.swing.JMenuItem();
         jmi_suppliers = new javax.swing.JMenuItem();
+        jmi_products = new javax.swing.JMenuItem();
         jmi_exit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,6 +86,19 @@ public class MainView extends javax.swing.JFrame {
         });
         jm_options.add(jmi_suppliers);
 
+        jmi_products.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_products.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jmi_products.setForeground(new java.awt.Color(255, 255, 255));
+        jmi_products.setText("Productos");
+        jmi_products.setBorder(null);
+        jmi_products.setBorderPainted(false);
+        jmi_products.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_productsActionPerformed(evt);
+            }
+        });
+        jm_options.add(jmi_products);
+
         jmi_exit.setBackground(new java.awt.Color(0, 121, 107));
         jmi_exit.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_exit.setForeground(new java.awt.Color(255, 255, 255));
@@ -118,6 +132,10 @@ public class MainView extends javax.swing.JFrame {
     private void jmi_suppliersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_suppliersActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_suppliersActionPerformed
+
+    private void jmi_productsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_productsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_productsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,6 +178,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JMenuBar jmb_menu;
     public javax.swing.JMenuItem jmi_customers;
     public javax.swing.JMenuItem jmi_exit;
+    public javax.swing.JMenuItem jmi_products;
     public javax.swing.JMenuItem jmi_suppliers;
     // End of variables declaration//GEN-END:variables
 }
