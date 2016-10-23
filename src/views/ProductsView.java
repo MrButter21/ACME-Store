@@ -114,22 +114,22 @@ public class ProductsView extends javax.swing.JPanel {
         jtf_stock.setBorder(null);
 
         jb_add.setBackground(new java.awt.Color(0, 121, 107));
-        jb_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add_user.png"))); // NOI18N
+        jb_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add_product.png"))); // NOI18N
         jb_add.setBorder(null);
         jb_add.setBorderPainted(false);
 
         jb_remove.setBackground(new java.awt.Color(0, 121, 107));
-        jb_remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/remove_user.png"))); // NOI18N
+        jb_remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/remove_product.png"))); // NOI18N
         jb_remove.setBorder(null);
         jb_remove.setBorderPainted(false);
 
         jb_edit.setBackground(new java.awt.Color(0, 121, 107));
-        jb_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/edit_user.png"))); // NOI18N
+        jb_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/edit_product.png"))); // NOI18N
         jb_edit.setBorder(null);
         jb_edit.setBorderPainted(false);
 
         jb_find.setBackground(new java.awt.Color(0, 121, 107));
-        jb_find.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/find_user.png"))); // NOI18N
+        jb_find.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/find_product.png"))); // NOI18N
         jb_find.setBorder(null);
         jb_find.setBorderPainted(false);
 
