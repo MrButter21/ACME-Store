@@ -9,6 +9,10 @@ import javax.swing.JPanel;
 public class Main {
 
     public static void main(String[] args) {
+        UsersModel usersModel = new UsersModel();
+        UsersView usersView = new UsersView();
+        UsersController usersController = new UsersController(usersModel, usersView);
+        
         CustomersModel customersModel = new CustomersModel();
         CustomersView customersView = new CustomersView();
         CustomersController customersController = new CustomersController(customersModel, customersView);
@@ -21,10 +25,11 @@ public class Main {
         ProductsView productsView = new ProductsView();
         ProductsController productsController = new ProductsController(productsModel, productsView);
         
-        JPanel paneArray[] = new JPanel[3];
-        paneArray[0] = customersView;
-        paneArray[1] = suppliersView;
-        paneArray[2] = productsView;
+        JPanel paneArray[] = new JPanel[4];
+        paneArray[0] = usersView;
+        paneArray[1] = customersView;
+        paneArray[2] = suppliersView;
+        paneArray[3] = productsView;
         
         MainModel mainModel = new MainModel();
         MainView mainView = new MainView();

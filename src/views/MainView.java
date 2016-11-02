@@ -30,7 +30,7 @@ public class MainView extends javax.swing.JFrame {
         jPanel = new javax.swing.JPanel();
         jmb_menu = new javax.swing.JMenuBar();
         jm_options = new javax.swing.JMenu();
-        jmi_signIn = new javax.swing.JMenuItem();
+        jmi_login = new javax.swing.JMenuItem();
         jmi_users = new javax.swing.JMenuItem();
         jmi_exit = new javax.swing.JMenuItem();
         jm_catalog = new javax.swing.JMenu();
@@ -72,18 +72,18 @@ public class MainView extends javax.swing.JFrame {
         jm_options.setText("Opciones de tienda");
         jm_options.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
-        jmi_signIn.setBackground(new java.awt.Color(0, 121, 107));
-        jmi_signIn.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jmi_signIn.setForeground(new java.awt.Color(255, 255, 255));
-        jmi_signIn.setText("Iniciar sesión");
-        jmi_signIn.setBorder(null);
-        jmi_signIn.setBorderPainted(false);
-        jmi_signIn.addActionListener(new java.awt.event.ActionListener() {
+        jmi_login.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_login.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jmi_login.setForeground(new java.awt.Color(255, 255, 255));
+        jmi_login.setText("Iniciar sesión");
+        jmi_login.setBorder(null);
+        jmi_login.setBorderPainted(false);
+        jmi_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmi_signInActionPerformed(evt);
+                jmi_loginActionPerformed(evt);
             }
         });
-        jm_options.add(jmi_signIn);
+        jm_options.add(jmi_login);
 
         jmi_users.setBackground(new java.awt.Color(0, 121, 107));
         jmi_users.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
@@ -290,9 +290,9 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_productsActionPerformed
 
-    private void jmi_signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_signInActionPerformed
+    private void jmi_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_loginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jmi_signInActionPerformed
+    }//GEN-LAST:event_jmi_loginActionPerformed
 
     private void jmi_usersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_usersActionPerformed
         // TODO add your handling code here:
@@ -371,13 +371,13 @@ public class MainView extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmi_customers;
     public javax.swing.JMenuItem jmi_customersReport;
     public javax.swing.JMenuItem jmi_exit;
+    public javax.swing.JMenuItem jmi_login;
     public javax.swing.JMenuItem jmi_products;
     public javax.swing.JMenuItem jmi_productsReport;
     public javax.swing.JMenuItem jmi_purchases;
     public javax.swing.JMenuItem jmi_purchasesReport;
     public javax.swing.JMenuItem jmi_sales;
     public javax.swing.JMenuItem jmi_salesReport;
-    public javax.swing.JMenuItem jmi_signIn;
     public javax.swing.JMenuItem jmi_suppliers;
     public javax.swing.JMenuItem jmi_suppliersReport;
     public javax.swing.JMenuItem jmi_users;

@@ -13,6 +13,7 @@ public class MainController implements ActionListener {
     MainModel mainModel;
     
     MainView mainView;
+    UsersView usersView;
     CustomersView customersView;
     SuppliersView suppliersView;
     ProductsView productsView;
@@ -24,6 +25,7 @@ public class MainController implements ActionListener {
         this.mainView = mainView;
         this.paneArray = paneArray;
         
+        this.mainView.jmi_users.addActionListener(this);
         this.mainView.jmi_customers.addActionListener(this);
         this.mainView.jmi_suppliers.addActionListener(this);
         this.mainView.jmi_products.addActionListener(this);
@@ -34,7 +36,9 @@ public class MainController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent x) {
-        if(x.getSource() == mainView.jmi_customers)
+        if(x.getSource() == mainView.jmi_users)
+            usersPane();
+        else if(x.getSource() == mainView.jmi_customers)
             customersPane();
         else if(x.getSource() == mainView.jmi_suppliers)
             suppliersPane();
@@ -50,20 +54,26 @@ public class MainController implements ActionListener {
         mainView.setVisible(true);
     }
     
-    public void customersPane() {
+    public void usersPane() {
         mainView.setContentPane(paneArray[0]);
         mainView.revalidate();
         mainView.repaint();
     }
     
-    public void suppliersPane() {
+    public void customersPane() {
         mainView.setContentPane(paneArray[1]);
         mainView.revalidate();
         mainView.repaint();
     }
     
-    public void productsPane() {
+    public void suppliersPane() {
         mainView.setContentPane(paneArray[2]);
+        mainView.revalidate();
+        mainView.repaint();
+    }
+    
+    public void productsPane() {
+        mainView.setContentPane(paneArray[3]);
         mainView.revalidate();
         mainView.repaint();
     }

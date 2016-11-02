@@ -89,7 +89,7 @@ values('Sergio', 'MrButter21', 'Alessandra2000', 'Administrador', 'Activo');
 insert into usuarios(nombre, usuario, clave, nivel, estado)
 values('Alessandra', 'dead_alex12', 'EssO&R456', 'Cliente', 'Activo');
 insert into usuarios(nombre, usuario, clave, nivel, estado)
-values('Cornelio', 'CornieES', 'CornPops', 'Provvedor', 'Activo');
+values('Cornelio', 'CornieES', 'CornPops', 'Proveedor', 'Activo');
 
 insert into clientes(nombre, ap_paterno, ap_materno, telefono, email, rfc, calle, numero, colonia, ciudad, estado)
 values('Rubi', 'Vargas', 'Cruz', '7751171638', 'alex15@hotmail.com', '2394574103', 'Nogales', '210', 'Estrella', 'Tulancingo', 'Hidalgo');
