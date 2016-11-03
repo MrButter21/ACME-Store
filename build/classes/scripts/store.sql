@@ -50,7 +50,7 @@ create table if not exists clientes (
 
 create table if not exists ventas (
     id_venta smallint(5) not null auto_increment primary key,
-    fecha date not null,
+    fecha varchar(15) not null,
     id_cliente smallint(5) not null references clientes(id_cliente),
     subtotal float(6) not null,
     iva tinyint(4) not null,
@@ -59,7 +59,7 @@ create table if not exists ventas (
 
 create table if not exists compras (
     id_compra smallint(5) not null auto_increment primary key,
-    fecha date not null,
+    fecha varchar(15) not null,
     id_proveedor smallint(5) not null references proveedores(id_proveedor),
     subtotal float(6) not null,
     iva tinyint(4) not null,
