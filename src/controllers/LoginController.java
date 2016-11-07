@@ -96,6 +96,9 @@ public class LoginController implements ActionListener {
                 mainView.jmi_salesReport.setEnabled(true);
             }
         }
+        else if(loginView.jtf_user.getText().isEmpty() || loginView.jpf_password.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No puedes dejar campos vacíos.");
+        }
         else {
             JOptionPane.showMessageDialog(null, "No puedes ingresar. No eres un usuario válido.");
             loginView.jtf_user.setText("");
