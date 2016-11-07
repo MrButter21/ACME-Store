@@ -28,6 +28,7 @@ public class MainView extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel = new javax.swing.JPanel();
+        jl_title = new javax.swing.JLabel();
         jmb_menu = new javax.swing.JMenuBar();
         jm_options = new javax.swing.JMenu();
         jmi_login = new javax.swing.JMenuItem();
@@ -52,15 +53,25 @@ public class MainView extends javax.swing.JFrame {
 
         jPanel.setBackground(new java.awt.Color(0, 150, 136));
 
+        jl_title.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jl_title.setForeground(new java.awt.Color(255, 255, 255));
+        jl_title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/title.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
         jPanel.setLayout(jPanelLayout);
         jPanelLayout.setHorizontalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 775, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
+                .addContainerGap(91, Short.MAX_VALUE)
+                .addComponent(jl_title)
+                .addGap(84, 84, 84))
         );
         jPanelLayout.setVerticalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 431, Short.MAX_VALUE)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(jl_title)
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         jmb_menu.setBackground(new java.awt.Color(0, 121, 107));
@@ -363,6 +374,7 @@ public class MainView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel;
+    public javax.swing.JLabel jl_title;
     public javax.swing.JMenu jm_catalog;
     public javax.swing.JMenu jm_operations;
     public javax.swing.JMenu jm_options;

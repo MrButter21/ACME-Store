@@ -33,6 +33,7 @@ public class LoginView extends javax.swing.JPanel {
         jl_header2 = new javax.swing.JLabel();
         jpf_password = new javax.swing.JPasswordField();
         jb_login = new javax.swing.JButton();
+        jl_logo = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 150, 136));
 
@@ -67,11 +68,19 @@ public class LoginView extends javax.swing.JPanel {
         jb_login.setBorder(null);
         jb_login.setBorderPainted(false);
 
+        jl_logo.setFont(new java.awt.Font("Trebuchet MS", 1, 45)); // NOI18N
+        jl_logo.setForeground(new java.awt.Color(255, 255, 255));
+        jl_logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_logo.setText("¡Bienvenido(a) a ACME-Store!");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 745, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jl_logo, javax.swing.GroupLayout.DEFAULT_SIZE, 733, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -94,7 +103,10 @@ public class LoginView extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(193, 193, 193)
+                .addComponent(jl_logo)
+                .addContainerGap(204, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(163, 163, 163)
@@ -118,6 +130,7 @@ public class LoginView extends javax.swing.JPanel {
     public javax.swing.JButton jb_login;
     public javax.swing.JLabel jl_header1;
     public javax.swing.JLabel jl_header2;
+    public javax.swing.JLabel jl_logo;
     public javax.swing.JLabel jl_title;
     public javax.swing.JPasswordField jpf_password;
     public javax.swing.JTextField jtf_user;

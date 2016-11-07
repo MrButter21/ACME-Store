@@ -31,6 +31,7 @@ public class LoginController implements ActionListener {
     }
     
     public void initView() {
+        loginView.jl_logo.setVisible(false);
         loginModel.initValues();
     }
     
@@ -46,6 +47,7 @@ public class LoginController implements ActionListener {
             loginView.jpf_password.setVisible(false);
             loginView.jb_login.setVisible(false);
             
+            loginView.jl_logo.setVisible(true);
             mainView.jmi_login.setEnabled(false);
             if(loginModel.level.equals("Administrador")) {
                 mainView.jm_options.setEnabled(true);
@@ -67,7 +69,7 @@ public class LoginController implements ActionListener {
                 mainView.jmi_suppliersReport.setEnabled(true);
                 mainView.jmi_productsReport.setEnabled(true);
                 mainView.jmi_purchasesReport.setEnabled(true);
-                mainView.jmi_salesReport.setEnabled(true);
+                mainView.jmi_salesReport.setEnabled(true);            
             }
             else if(loginModel.level.equals("Cliente")) {
                 mainView.jm_options.setEnabled(true);

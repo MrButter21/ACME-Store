@@ -81,6 +81,8 @@ public class MainController implements ActionListener {
         mainView.jmi_productsReport.setEnabled(false);
         mainView.jmi_purchasesReport.setEnabled(false);
         mainView.jmi_salesReport.setEnabled(false);
+        
+        mainView.jl_title.setVisible(true);
     }
     
     public void loginPane() {
