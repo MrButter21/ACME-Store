@@ -30,6 +30,7 @@ public class MainView extends javax.swing.JFrame {
         jPanel = new javax.swing.JPanel();
         jmb_menu = new javax.swing.JMenuBar();
         jm_options = new javax.swing.JMenu();
+        jmi_login = new javax.swing.JMenuItem();
         jmi_users = new javax.swing.JMenuItem();
         jmi_exit = new javax.swing.JMenuItem();
         jm_catalog = new javax.swing.JMenu();
@@ -70,6 +71,19 @@ public class MainView extends javax.swing.JFrame {
         jm_options.setForeground(new java.awt.Color(255, 255, 255));
         jm_options.setText("Opciones de tienda");
         jm_options.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+
+        jmi_login.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_login.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jmi_login.setForeground(new java.awt.Color(255, 255, 255));
+        jmi_login.setText("Iniciar sesión");
+        jmi_login.setBorder(null);
+        jmi_login.setBorderPainted(false);
+        jmi_login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_loginActionPerformed(evt);
+            }
+        });
+        jm_options.add(jmi_login);
 
         jmi_users.setBackground(new java.awt.Color(0, 121, 107));
         jmi_users.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
@@ -308,6 +322,10 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_salesReportActionPerformed
 
+    private void jmi_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_loginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_loginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -345,14 +363,15 @@ public class MainView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel;
-    private javax.swing.JMenu jm_catalog;
-    private javax.swing.JMenu jm_operations;
-    private javax.swing.JMenu jm_options;
-    private javax.swing.JMenu jm_reports;
+    public javax.swing.JMenu jm_catalog;
+    public javax.swing.JMenu jm_operations;
+    public javax.swing.JMenu jm_options;
+    public javax.swing.JMenu jm_reports;
     private javax.swing.JMenuBar jmb_menu;
     public javax.swing.JMenuItem jmi_customers;
     public javax.swing.JMenuItem jmi_customersReport;
     public javax.swing.JMenuItem jmi_exit;
+    public javax.swing.JMenuItem jmi_login;
     public javax.swing.JMenuItem jmi_products;
     public javax.swing.JMenuItem jmi_productsReport;
     public javax.swing.JMenuItem jmi_purchases;
