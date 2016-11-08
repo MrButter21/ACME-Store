@@ -119,10 +119,15 @@ public class ProductsModel {
         initValues();
     }
     
-    public void findProduct(String product) {
+    public boolean findProduct(String product) {
+        boolean isFound = false;
         String find = "select * from productos where producto like "+product+"%;";
         connection.executeQuery(find);
         connection.toNext();
+        if(product.equals(connection.getString("producto"))) {
+            isFound = true;
+        }
+        return isFound;
     }
     
     public void populateTable() {

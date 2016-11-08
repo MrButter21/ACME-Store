@@ -103,10 +103,10 @@ public class UsersController implements ActionListener {
     
     public void findUser() {
         String name = JOptionPane.showInputDialog(null, "Introduce el nombre que deseas buscar:", "Búsqueda por nombre", JOptionPane.INFORMATION_MESSAGE);
-        if(name.equals(usersView.jtf_name.getText()))
+        if(usersModel.findUser(name))
             JOptionPane.showMessageDialog(null, name + " existe en la base de datos", "Resultados", JOptionPane.INFORMATION_MESSAGE);
         else 
-            JOptionPane.showMessageDialog(null, name + " no existe en la base de datos. Intente de nuevo", "Alerta", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, name + " no existe en la base de datos. Intente de nuevo", "Aviso", JOptionPane.ERROR_MESSAGE);
     }
     
     private void showRecords() {

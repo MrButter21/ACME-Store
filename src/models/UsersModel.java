@@ -102,10 +102,15 @@ public class UsersModel {
         initValues();
     }
     
-    public void findUser(String name) {
+    public boolean findUser(String name) {
+        boolean isFound = false;
         String find = "select * from usuarios where nombre like "+name+"%;";
         connection.executeQuery(find);
         connection.toNext();
+        if(name.equals(connection.getString("nombre"))) {
+            isFound = true;
+        }
+        return isFound;
     }
     
     public void populateTable() {

@@ -171,10 +171,15 @@ public class SuppliersModel {
         initValues();
     }
     
-    public void findSupplier(String name) {
+    public boolean findSupplier(String name) {
+        boolean isFound = false;
         String find = "select * from proveedores where nombre like "+name+"%;";
         connection.executeQuery(find);
         connection.toNext();
+        if(name.equals(connection.getString("nombre"))) {
+            isFound = true;
+        }
+        return isFound;
     }
     
     public void populateTable() {

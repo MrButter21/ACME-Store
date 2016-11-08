@@ -114,11 +114,11 @@ public class ProductsController implements ActionListener {
     }
     
     public void findProduct() {
-        String name = JOptionPane.showInputDialog(null, "Introduce el nombre que deseas buscar:", "Búsqueda por nombre", JOptionPane.INFORMATION_MESSAGE);
-        if(name.equals(productsView.jtf_product.getText()))
-            JOptionPane.showMessageDialog(null, name + " existe en la base de datos", "Resultados", JOptionPane.INFORMATION_MESSAGE);
+        String product = JOptionPane.showInputDialog(null, "Introduce el producto que deseas buscar:", "Búsqueda por producto", JOptionPane.INFORMATION_MESSAGE);
+        if(productsModel.findProduct(product))
+            JOptionPane.showMessageDialog(null, product + " existe en la base de datos", "Resultados", JOptionPane.INFORMATION_MESSAGE);
         else 
-            JOptionPane.showMessageDialog(null, name + " no existe en la base de datos. Intente de nuevo", "Alerta", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, product + " no existe en la base de datos. Intente de nuevo", "Aviso", JOptionPane.ERROR_MESSAGE);
     }
     
     private void showRecords() {
