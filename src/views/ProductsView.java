@@ -51,7 +51,7 @@ public class ProductsView extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_productsTable = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(0, 121, 107));
+        setBackground(new java.awt.Color(63, 81, 181));
 
         jLabel1.setBackground(new java.awt.Color(0, 121, 107));
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -63,7 +63,7 @@ public class ProductsView extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ID Producto");
 
-        jtf_id.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_id.setBackground(new java.awt.Color(48, 63, 159));
         jtf_id.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_id.setForeground(new java.awt.Color(255, 255, 255));
         jtf_id.setBorder(null);
@@ -72,7 +72,7 @@ public class ProductsView extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Producto");
 
-        jtf_product.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_product.setBackground(new java.awt.Color(48, 63, 159));
         jtf_product.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_product.setForeground(new java.awt.Color(255, 255, 255));
         jtf_product.setBorder(null);
@@ -81,7 +81,7 @@ public class ProductsView extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Descripción");
 
-        jtf_description.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_description.setBackground(new java.awt.Color(48, 63, 159));
         jtf_description.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_description.setForeground(new java.awt.Color(255, 255, 255));
         jtf_description.setBorder(null);
@@ -98,47 +98,47 @@ public class ProductsView extends javax.swing.JPanel {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Existencias");
 
-        jtf_purchaseCost.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_purchaseCost.setBackground(new java.awt.Color(48, 63, 159));
         jtf_purchaseCost.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_purchaseCost.setForeground(new java.awt.Color(255, 255, 255));
         jtf_purchaseCost.setBorder(null);
 
-        jtf_saleCost.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_saleCost.setBackground(new java.awt.Color(48, 63, 159));
         jtf_saleCost.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_saleCost.setForeground(new java.awt.Color(255, 255, 255));
         jtf_saleCost.setBorder(null);
 
-        jtf_stock.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_stock.setBackground(new java.awt.Color(48, 63, 159));
         jtf_stock.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_stock.setForeground(new java.awt.Color(255, 255, 255));
         jtf_stock.setBorder(null);
 
-        jb_add.setBackground(new java.awt.Color(0, 121, 107));
+        jb_add.setBackground(new java.awt.Color(63, 81, 181));
         jb_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add_product.png"))); // NOI18N
         jb_add.setBorder(null);
         jb_add.setBorderPainted(false);
 
-        jb_remove.setBackground(new java.awt.Color(0, 121, 107));
+        jb_remove.setBackground(new java.awt.Color(63, 81, 181));
         jb_remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/remove_product.png"))); // NOI18N
         jb_remove.setBorder(null);
         jb_remove.setBorderPainted(false);
 
-        jb_edit.setBackground(new java.awt.Color(0, 121, 107));
+        jb_edit.setBackground(new java.awt.Color(63, 81, 181));
         jb_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/edit_product.png"))); // NOI18N
         jb_edit.setBorder(null);
         jb_edit.setBorderPainted(false);
 
-        jb_find.setBackground(new java.awt.Color(0, 121, 107));
+        jb_find.setBackground(new java.awt.Color(63, 81, 181));
         jb_find.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/find_product.png"))); // NOI18N
         jb_find.setBorder(null);
         jb_find.setBorderPainted(false);
 
-        jb_first.setBackground(new java.awt.Color(0, 121, 107));
+        jb_first.setBackground(new java.awt.Color(63, 81, 181));
         jb_first.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/first.png"))); // NOI18N
         jb_first.setBorder(null);
         jb_first.setBorderPainted(false);
 
-        jb_previous.setBackground(new java.awt.Color(0, 121, 107));
+        jb_previous.setBackground(new java.awt.Color(63, 81, 181));
         jb_previous.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/previous.png"))); // NOI18N
         jb_previous.setBorder(null);
         jb_previous.setBorderPainted(false);
@@ -148,7 +148,7 @@ public class ProductsView extends javax.swing.JPanel {
             }
         });
 
-        jb_next.setBackground(new java.awt.Color(0, 121, 107));
+        jb_next.setBackground(new java.awt.Color(63, 81, 181));
         jb_next.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/next.png"))); // NOI18N
         jb_next.setBorder(null);
         jb_next.setBorderPainted(false);
@@ -158,7 +158,7 @@ public class ProductsView extends javax.swing.JPanel {
             }
         });
 
-        jb_last.setBackground(new java.awt.Color(0, 121, 107));
+        jb_last.setBackground(new java.awt.Color(63, 81, 181));
         jb_last.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/last.png"))); // NOI18N
         jb_last.setBorder(null);
         jb_last.setBorderPainted(false);
@@ -166,7 +166,7 @@ public class ProductsView extends javax.swing.JPanel {
         jScrollPane1.setBorder(null);
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jt_productsTable.setBackground(new java.awt.Color(0, 150, 136));
+        jt_productsTable.setBackground(new java.awt.Color(48, 63, 159));
         jt_productsTable.setFont(new java.awt.Font("Trebuchet MS", 0, 10)); // NOI18N
         jt_productsTable.setForeground(new java.awt.Color(255, 255, 255));
         jt_productsTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -184,7 +184,7 @@ public class ProductsView extends javax.swing.JPanel {
                 "ID", "Producto", "Descripcion", "$ Compra", "$ Venta", "Stock"
             }
         ));
-        jt_productsTable.setGridColor(new java.awt.Color(0, 121, 107));
+        jt_productsTable.setGridColor(new java.awt.Color(63, 81, 181));
         jt_productsTable.setSelectionBackground(new java.awt.Color(0, 121, 107));
         jt_productsTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jt_productsTable);
@@ -243,10 +243,10 @@ public class ProductsView extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jb_remove)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jb_edit))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(jb_find))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jb_edit)
+                                    .addComponent(jb_find))))
+                        .addGap(3, 3, 3))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
         );

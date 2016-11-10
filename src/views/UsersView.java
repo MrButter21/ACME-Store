@@ -48,7 +48,7 @@ public class UsersView extends javax.swing.JPanel {
         jt_usersTable = new javax.swing.JTable();
         jpf_password = new javax.swing.JPasswordField();
 
-        setBackground(new java.awt.Color(0, 121, 107));
+        setBackground(new java.awt.Color(63, 81, 181));
 
         jLabel1.setBackground(new java.awt.Color(0, 121, 107));
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -60,7 +60,7 @@ public class UsersView extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre");
 
-        jtf_name.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_name.setBackground(new java.awt.Color(48, 63, 159));
         jtf_name.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_name.setForeground(new java.awt.Color(255, 255, 255));
         jtf_name.setBorder(null);
@@ -69,7 +69,7 @@ public class UsersView extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Usuario");
 
-        jtf_user.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_user.setBackground(new java.awt.Color(48, 63, 159));
         jtf_user.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_user.setForeground(new java.awt.Color(255, 255, 255));
         jtf_user.setBorder(null);
@@ -86,37 +86,37 @@ public class UsersView extends javax.swing.JPanel {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Estado");
 
-        jtf_level.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_level.setBackground(new java.awt.Color(48, 63, 159));
         jtf_level.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_level.setForeground(new java.awt.Color(255, 255, 255));
         jtf_level.setBorder(null);
 
-        jtf_status.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_status.setBackground(new java.awt.Color(48, 63, 159));
         jtf_status.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_status.setForeground(new java.awt.Color(255, 255, 255));
         jtf_status.setBorder(null);
 
-        jb_add.setBackground(new java.awt.Color(0, 121, 107));
+        jb_add.setBackground(new java.awt.Color(63, 81, 181));
         jb_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add_user.png"))); // NOI18N
         jb_add.setBorder(null);
         jb_add.setBorderPainted(false);
 
-        jb_edit.setBackground(new java.awt.Color(0, 121, 107));
+        jb_edit.setBackground(new java.awt.Color(63, 81, 181));
         jb_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/edit_user.png"))); // NOI18N
         jb_edit.setBorder(null);
         jb_edit.setBorderPainted(false);
 
-        jb_find.setBackground(new java.awt.Color(0, 121, 107));
+        jb_find.setBackground(new java.awt.Color(63, 81, 181));
         jb_find.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/find_user.png"))); // NOI18N
         jb_find.setBorder(null);
         jb_find.setBorderPainted(false);
 
-        jb_first.setBackground(new java.awt.Color(0, 121, 107));
+        jb_first.setBackground(new java.awt.Color(63, 81, 181));
         jb_first.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/first.png"))); // NOI18N
         jb_first.setBorder(null);
         jb_first.setBorderPainted(false);
 
-        jb_previous.setBackground(new java.awt.Color(0, 121, 107));
+        jb_previous.setBackground(new java.awt.Color(63, 81, 181));
         jb_previous.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/previous.png"))); // NOI18N
         jb_previous.setBorder(null);
         jb_previous.setBorderPainted(false);
@@ -126,7 +126,7 @@ public class UsersView extends javax.swing.JPanel {
             }
         });
 
-        jb_next.setBackground(new java.awt.Color(0, 121, 107));
+        jb_next.setBackground(new java.awt.Color(63, 81, 181));
         jb_next.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/next.png"))); // NOI18N
         jb_next.setBorder(null);
         jb_next.setBorderPainted(false);
@@ -136,7 +136,7 @@ public class UsersView extends javax.swing.JPanel {
             }
         });
 
-        jb_last.setBackground(new java.awt.Color(0, 121, 107));
+        jb_last.setBackground(new java.awt.Color(63, 81, 181));
         jb_last.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/last.png"))); // NOI18N
         jb_last.setBorder(null);
         jb_last.setBorderPainted(false);
@@ -144,7 +144,7 @@ public class UsersView extends javax.swing.JPanel {
         jScrollPane1.setBorder(null);
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jt_usersTable.setBackground(new java.awt.Color(0, 150, 136));
+        jt_usersTable.setBackground(new java.awt.Color(48, 63, 159));
         jt_usersTable.setFont(new java.awt.Font("Trebuchet MS", 0, 10)); // NOI18N
         jt_usersTable.setForeground(new java.awt.Color(255, 255, 255));
         jt_usersTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -162,12 +162,12 @@ public class UsersView extends javax.swing.JPanel {
                 "Usuario", "Nivel", "Estado"
             }
         ));
-        jt_usersTable.setGridColor(new java.awt.Color(0, 121, 107));
+        jt_usersTable.setGridColor(new java.awt.Color(63, 81, 181));
         jt_usersTable.setSelectionBackground(new java.awt.Color(0, 121, 107));
         jt_usersTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jt_usersTable);
 
-        jpf_password.setBackground(new java.awt.Color(0, 150, 136));
+        jpf_password.setBackground(new java.awt.Color(48, 63, 159));
         jpf_password.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jpf_password.setForeground(new java.awt.Color(255, 255, 255));
         jpf_password.setBorder(null);

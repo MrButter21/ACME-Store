@@ -89,36 +89,42 @@ public class UsersModel {
         setValues();
     }
     
+    public void populateTable() {
+        for(int i = 0; i < tableModel.getRowCount(); i++) {
+            tableModel.removeRow(i);
+            i -= 1;
+        }
+        Object fields[] = new Object[]{"MrButter21", "Administrador", "Activo"};
+        tableModel.addRow(fields);
+        while(connection.toNext()) {
+            setValues();
+            tableModel.addRow(new Object []{user, level, status});           
+        }
+    }
+    
     public void addUser(String name, String user, String password, String level, String status) {
         String add = "insert into usuarios (nombre, usuario, clave, nivel, estado)"
                    + "values ('"+name+"', '"+user+"', '"+password+"', '"+level+"', '"+status+"');";
         connection.executeUpdate(add);
         initValues();
+        populateTable();
     }
     
     public void editUser(String name, String user, String password, String level, String status) {
         String edit = "update usuarios set nombre ='"+name+"', usuario ='"+user+"', clave ='"+password+"', nivel ='"+level+"', estado ='"+status+"'" + "where nombre =" +name;
         connection.executeUpdate(edit);
         initValues();
+        populateTable();
     }
     
     public boolean findUser(String name) {
         boolean isFound = false;
-        String find = "select * from usuarios where nombre like "+name+"%;";
+        String find = "select * from usuarios where nombre = '"+name+"';";
         connection.executeQuery(find);
         connection.toNext();
         if(name.equals(connection.getString("nombre"))) {
             isFound = true;
         }
         return isFound;
-    }
-    
-    public void populateTable() {
-        Object fields[] = new Object[]{user, level, status};
-        tableModel.addRow(fields);
-        while(connection.toNext()) {
-            setValues();
-            tableModel.addRow(new Object []{user, level, status});           
-        }
     }
 }

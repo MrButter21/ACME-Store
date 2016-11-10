@@ -51,7 +51,7 @@ public class MainView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 150, 136));
 
-        jPanel.setBackground(new java.awt.Color(0, 150, 136));
+        jPanel.setBackground(new java.awt.Color(63, 81, 181));
 
         jl_title.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jl_title.setForeground(new java.awt.Color(255, 255, 255));
@@ -74,16 +74,16 @@ public class MainView extends javax.swing.JFrame {
                 .addContainerGap(102, Short.MAX_VALUE))
         );
 
-        jmb_menu.setBackground(new java.awt.Color(0, 121, 107));
+        jmb_menu.setBackground(new java.awt.Color(48, 63, 159));
         jmb_menu.setBorder(null);
 
-        jm_options.setBackground(new java.awt.Color(0, 121, 107));
+        jm_options.setBackground(new java.awt.Color(48, 63, 159));
         jm_options.setBorder(null);
         jm_options.setForeground(new java.awt.Color(255, 255, 255));
         jm_options.setText("Opciones de tienda");
         jm_options.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
-        jmi_login.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_login.setBackground(new java.awt.Color(48, 63, 159));
         jmi_login.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_login.setForeground(new java.awt.Color(255, 255, 255));
         jmi_login.setText("Iniciar sesión");
@@ -96,7 +96,7 @@ public class MainView extends javax.swing.JFrame {
         });
         jm_options.add(jmi_login);
 
-        jmi_users.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_users.setBackground(new java.awt.Color(48, 63, 159));
         jmi_users.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_users.setForeground(new java.awt.Color(255, 255, 255));
         jmi_users.setText("Usuarios");
@@ -109,7 +109,7 @@ public class MainView extends javax.swing.JFrame {
         });
         jm_options.add(jmi_users);
 
-        jmi_exit.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_exit.setBackground(new java.awt.Color(48, 63, 159));
         jmi_exit.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_exit.setForeground(new java.awt.Color(255, 255, 255));
         jmi_exit.setText("Salir");
@@ -119,13 +119,13 @@ public class MainView extends javax.swing.JFrame {
 
         jmb_menu.add(jm_options);
 
-        jm_catalog.setBackground(new java.awt.Color(0, 121, 107));
+        jm_catalog.setBackground(new java.awt.Color(48, 63, 159));
         jm_catalog.setBorder(null);
         jm_catalog.setForeground(new java.awt.Color(255, 255, 255));
         jm_catalog.setText("Catálogos");
         jm_catalog.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
-        jmi_customers.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_customers.setBackground(new java.awt.Color(48, 63, 159));
         jmi_customers.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_customers.setForeground(new java.awt.Color(255, 255, 255));
         jmi_customers.setText("Clientes");
@@ -138,7 +138,7 @@ public class MainView extends javax.swing.JFrame {
         });
         jm_catalog.add(jmi_customers);
 
-        jmi_suppliers.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_suppliers.setBackground(new java.awt.Color(48, 63, 159));
         jmi_suppliers.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_suppliers.setForeground(new java.awt.Color(255, 255, 255));
         jmi_suppliers.setText("Proveedores");
@@ -151,7 +151,7 @@ public class MainView extends javax.swing.JFrame {
         });
         jm_catalog.add(jmi_suppliers);
 
-        jmi_products.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_products.setBackground(new java.awt.Color(48, 63, 159));
         jmi_products.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_products.setForeground(new java.awt.Color(255, 255, 255));
         jmi_products.setText("Productos");
@@ -166,13 +166,13 @@ public class MainView extends javax.swing.JFrame {
 
         jmb_menu.add(jm_catalog);
 
-        jm_operations.setBackground(new java.awt.Color(0, 121, 107));
+        jm_operations.setBackground(new java.awt.Color(48, 63, 159));
         jm_operations.setBorder(null);
         jm_operations.setForeground(new java.awt.Color(255, 255, 255));
         jm_operations.setText("Operaciones");
         jm_operations.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
-        jmi_purchases.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_purchases.setBackground(new java.awt.Color(48, 63, 159));
         jmi_purchases.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_purchases.setForeground(new java.awt.Color(255, 255, 255));
         jmi_purchases.setText("Compras");
@@ -185,7 +185,7 @@ public class MainView extends javax.swing.JFrame {
         });
         jm_operations.add(jmi_purchases);
 
-        jmi_sales.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_sales.setBackground(new java.awt.Color(48, 63, 159));
         jmi_sales.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_sales.setForeground(new java.awt.Color(255, 255, 255));
         jmi_sales.setText("Ventas");
@@ -200,13 +200,13 @@ public class MainView extends javax.swing.JFrame {
 
         jmb_menu.add(jm_operations);
 
-        jm_reports.setBackground(new java.awt.Color(0, 121, 107));
+        jm_reports.setBackground(new java.awt.Color(48, 63, 159));
         jm_reports.setBorder(null);
         jm_reports.setForeground(new java.awt.Color(255, 255, 255));
         jm_reports.setText("Reportes");
         jm_reports.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
-        jmi_customersReport.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_customersReport.setBackground(new java.awt.Color(48, 63, 159));
         jmi_customersReport.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_customersReport.setForeground(new java.awt.Color(255, 255, 255));
         jmi_customersReport.setText("Clientes");
@@ -219,7 +219,7 @@ public class MainView extends javax.swing.JFrame {
         });
         jm_reports.add(jmi_customersReport);
 
-        jmi_suppliersReport.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_suppliersReport.setBackground(new java.awt.Color(48, 63, 159));
         jmi_suppliersReport.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_suppliersReport.setForeground(new java.awt.Color(255, 255, 255));
         jmi_suppliersReport.setText("Proveedores");
@@ -232,7 +232,7 @@ public class MainView extends javax.swing.JFrame {
         });
         jm_reports.add(jmi_suppliersReport);
 
-        jmi_productsReport.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_productsReport.setBackground(new java.awt.Color(48, 63, 159));
         jmi_productsReport.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_productsReport.setForeground(new java.awt.Color(255, 255, 255));
         jmi_productsReport.setText("Productos");
@@ -245,7 +245,7 @@ public class MainView extends javax.swing.JFrame {
         });
         jm_reports.add(jmi_productsReport);
 
-        jmi_purchasesReport.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_purchasesReport.setBackground(new java.awt.Color(48, 63, 159));
         jmi_purchasesReport.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_purchasesReport.setForeground(new java.awt.Color(255, 255, 255));
         jmi_purchasesReport.setText("Compras");
@@ -258,7 +258,7 @@ public class MainView extends javax.swing.JFrame {
         });
         jm_reports.add(jmi_purchasesReport);
 
-        jmi_salesReport.setBackground(new java.awt.Color(0, 121, 107));
+        jmi_salesReport.setBackground(new java.awt.Color(48, 63, 159));
         jmi_salesReport.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_salesReport.setForeground(new java.awt.Color(255, 255, 255));
         jmi_salesReport.setText("Ventas");

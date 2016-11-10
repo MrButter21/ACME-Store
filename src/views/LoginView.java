@@ -35,7 +35,7 @@ public class LoginView extends javax.swing.JPanel {
         jb_login = new javax.swing.JButton();
         jl_logo = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 150, 136));
+        setBackground(new java.awt.Color(63, 81, 181));
 
         jl_title.setBackground(new java.awt.Color(0, 121, 107));
         jl_title.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -47,7 +47,7 @@ public class LoginView extends javax.swing.JPanel {
         jl_header1.setForeground(new java.awt.Color(255, 255, 255));
         jl_header1.setText("Usuario");
 
-        jtf_user.setBackground(new java.awt.Color(0, 121, 107));
+        jtf_user.setBackground(new java.awt.Color(48, 63, 159));
         jtf_user.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jtf_user.setForeground(new java.awt.Color(255, 255, 255));
         jtf_user.setBorder(null);
@@ -56,12 +56,12 @@ public class LoginView extends javax.swing.JPanel {
         jl_header2.setForeground(new java.awt.Color(255, 255, 255));
         jl_header2.setText("Contraseña");
 
-        jpf_password.setBackground(new java.awt.Color(0, 121, 107));
+        jpf_password.setBackground(new java.awt.Color(48, 63, 159));
         jpf_password.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jpf_password.setForeground(new java.awt.Color(255, 255, 255));
         jpf_password.setBorder(null);
 
-        jb_login.setBackground(new java.awt.Color(0, 121, 107));
+        jb_login.setBackground(new java.awt.Color(48, 63, 159));
         jb_login.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jb_login.setForeground(new java.awt.Color(255, 255, 255));
         jb_login.setText("Ingresar al sistema");
@@ -88,17 +88,18 @@ public class LoginView extends javax.swing.JPanel {
                         .addComponent(jl_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(220, 220, 220)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jl_header1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jtf_user))
-                                .addComponent(jb_login, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jl_header2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jpf_password, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(0, 0, Short.MAX_VALUE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jl_header1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtf_user))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jl_header2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jpf_password, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jb_login, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(0, 189, Short.MAX_VALUE)))
                     .addContainerGap()))
         );
         layout.setVerticalGroup(

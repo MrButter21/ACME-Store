@@ -5,7 +5,7 @@
     <Menu class="javax.swing.JMenuBar" name="jmb_menu">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="6b" green="79" red="0" type="rgb"/>
+          <Color blue="9f" green="3f" red="30" type="rgb"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -15,7 +15,7 @@
         <Menu class="javax.swing.JMenu" name="jm_options">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="6b" green="79" red="0" type="rgb"/>
+              <Color blue="9f" green="3f" red="30" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -35,7 +35,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_login">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6b" green="79" red="0" type="rgb"/>
+                  <Color blue="9f" green="3f" red="30" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -59,7 +59,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_users">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6b" green="79" red="0" type="rgb"/>
+                  <Color blue="9f" green="3f" red="30" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -83,7 +83,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_exit">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6b" green="79" red="0" type="rgb"/>
+                  <Color blue="9f" green="3f" red="30" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -106,7 +106,7 @@
         <Menu class="javax.swing.JMenu" name="jm_catalog">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="6b" green="79" red="0" type="rgb"/>
+              <Color blue="9f" green="3f" red="30" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -126,7 +126,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_customers">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6b" green="79" red="0" type="rgb"/>
+                  <Color blue="9f" green="3f" red="30" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -150,7 +150,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_suppliers">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6b" green="79" red="0" type="rgb"/>
+                  <Color blue="9f" green="3f" red="30" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -174,7 +174,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_products">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6b" green="79" red="0" type="rgb"/>
+                  <Color blue="9f" green="3f" red="30" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -200,7 +200,7 @@
         <Menu class="javax.swing.JMenu" name="jm_operations">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="6b" green="79" red="0" type="rgb"/>
+              <Color blue="9f" green="3f" red="30" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -220,7 +220,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_purchases">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6b" green="79" red="0" type="rgb"/>
+                  <Color blue="9f" green="3f" red="30" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -244,7 +244,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_sales">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6b" green="79" red="0" type="rgb"/>
+                  <Color blue="9f" green="3f" red="30" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -270,7 +270,7 @@
         <Menu class="javax.swing.JMenu" name="jm_reports">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="6b" green="79" red="0" type="rgb"/>
+              <Color blue="9f" green="3f" red="30" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -290,7 +290,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_customersReport">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6b" green="79" red="0" type="rgb"/>
+                  <Color blue="9f" green="3f" red="30" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -314,7 +314,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_suppliersReport">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6b" green="79" red="0" type="rgb"/>
+                  <Color blue="9f" green="3f" red="30" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -338,7 +338,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_productsReport">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6b" green="79" red="0" type="rgb"/>
+                  <Color blue="9f" green="3f" red="30" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -362,7 +362,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_purchasesReport">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6b" green="79" red="0" type="rgb"/>
+                  <Color blue="9f" green="3f" red="30" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -386,7 +386,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_salesReport">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6b" green="79" red="0" type="rgb"/>
+                  <Color blue="9f" green="3f" red="30" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -451,7 +451,7 @@
     <Container class="javax.swing.JPanel" name="jPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="88" green="96" red="0" type="rgb"/>
+          <Color blue="b5" green="51" red="3f" type="rgb"/>
         </Property>
       </Properties>
 

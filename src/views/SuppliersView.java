@@ -61,7 +61,7 @@ public class SuppliersView extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_suppliersTable = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(0, 121, 107));
+        setBackground(new java.awt.Color(63, 81, 181));
 
         jLabel1.setBackground(new java.awt.Color(0, 121, 107));
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -73,7 +73,7 @@ public class SuppliersView extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ID Proveedor");
 
-        jtf_id.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_id.setBackground(new java.awt.Color(48, 63, 159));
         jtf_id.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_id.setForeground(new java.awt.Color(255, 255, 255));
         jtf_id.setBorder(null);
@@ -82,7 +82,7 @@ public class SuppliersView extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nombre");
 
-        jtf_name.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_name.setBackground(new java.awt.Color(48, 63, 159));
         jtf_name.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_name.setForeground(new java.awt.Color(255, 255, 255));
         jtf_name.setBorder(null);
@@ -91,7 +91,7 @@ public class SuppliersView extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("RFC");
 
-        jtf_rfc.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_rfc.setBackground(new java.awt.Color(48, 63, 159));
         jtf_rfc.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_rfc.setForeground(new java.awt.Color(255, 255, 255));
         jtf_rfc.setBorder(null);
@@ -100,12 +100,12 @@ public class SuppliersView extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Calle");
 
-        jtf_street.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_street.setBackground(new java.awt.Color(48, 63, 159));
         jtf_street.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_street.setForeground(new java.awt.Color(255, 255, 255));
         jtf_street.setBorder(null);
 
-        jtf_number.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_number.setBackground(new java.awt.Color(48, 63, 159));
         jtf_number.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_number.setForeground(new java.awt.Color(255, 255, 255));
         jtf_number.setBorder(null);
@@ -118,7 +118,7 @@ public class SuppliersView extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Colonia");
 
-        jtf_suburb.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_suburb.setBackground(new java.awt.Color(48, 63, 159));
         jtf_suburb.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_suburb.setForeground(new java.awt.Color(255, 255, 255));
         jtf_suburb.setBorder(null);
@@ -143,57 +143,57 @@ public class SuppliersView extends javax.swing.JPanel {
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Teléfono");
 
-        jtf_city.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_city.setBackground(new java.awt.Color(48, 63, 159));
         jtf_city.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_city.setForeground(new java.awt.Color(255, 255, 255));
         jtf_city.setBorder(null);
 
-        jtf_state.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_state.setBackground(new java.awt.Color(48, 63, 159));
         jtf_state.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_state.setForeground(new java.awt.Color(255, 255, 255));
         jtf_state.setBorder(null);
 
-        jtf_contact.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_contact.setBackground(new java.awt.Color(48, 63, 159));
         jtf_contact.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_contact.setForeground(new java.awt.Color(255, 255, 255));
         jtf_contact.setBorder(null);
 
-        jtf_phone.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_phone.setBackground(new java.awt.Color(48, 63, 159));
         jtf_phone.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_phone.setForeground(new java.awt.Color(255, 255, 255));
         jtf_phone.setBorder(null);
 
-        jtf_email.setBackground(new java.awt.Color(0, 150, 136));
+        jtf_email.setBackground(new java.awt.Color(48, 63, 159));
         jtf_email.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jtf_email.setForeground(new java.awt.Color(255, 255, 255));
         jtf_email.setBorder(null);
 
-        jb_add.setBackground(new java.awt.Color(0, 121, 107));
+        jb_add.setBackground(new java.awt.Color(63, 81, 181));
         jb_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add_user.png"))); // NOI18N
         jb_add.setBorder(null);
         jb_add.setBorderPainted(false);
 
-        jb_remove.setBackground(new java.awt.Color(0, 121, 107));
+        jb_remove.setBackground(new java.awt.Color(63, 81, 181));
         jb_remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/remove_user.png"))); // NOI18N
         jb_remove.setBorder(null);
         jb_remove.setBorderPainted(false);
 
-        jb_edit.setBackground(new java.awt.Color(0, 121, 107));
+        jb_edit.setBackground(new java.awt.Color(63, 81, 181));
         jb_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/edit_user.png"))); // NOI18N
         jb_edit.setBorder(null);
         jb_edit.setBorderPainted(false);
 
-        jb_find.setBackground(new java.awt.Color(0, 121, 107));
+        jb_find.setBackground(new java.awt.Color(63, 81, 181));
         jb_find.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/find_user.png"))); // NOI18N
         jb_find.setBorder(null);
         jb_find.setBorderPainted(false);
 
-        jb_first.setBackground(new java.awt.Color(0, 121, 107));
+        jb_first.setBackground(new java.awt.Color(63, 81, 181));
         jb_first.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/first.png"))); // NOI18N
         jb_first.setBorder(null);
         jb_first.setBorderPainted(false);
 
-        jb_previous.setBackground(new java.awt.Color(0, 121, 107));
+        jb_previous.setBackground(new java.awt.Color(63, 81, 181));
         jb_previous.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/previous.png"))); // NOI18N
         jb_previous.setBorder(null);
         jb_previous.setBorderPainted(false);
@@ -203,7 +203,7 @@ public class SuppliersView extends javax.swing.JPanel {
             }
         });
 
-        jb_next.setBackground(new java.awt.Color(0, 121, 107));
+        jb_next.setBackground(new java.awt.Color(63, 81, 181));
         jb_next.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/next.png"))); // NOI18N
         jb_next.setBorder(null);
         jb_next.setBorderPainted(false);
@@ -213,7 +213,7 @@ public class SuppliersView extends javax.swing.JPanel {
             }
         });
 
-        jb_last.setBackground(new java.awt.Color(0, 121, 107));
+        jb_last.setBackground(new java.awt.Color(63, 81, 181));
         jb_last.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/last.png"))); // NOI18N
         jb_last.setBorder(null);
         jb_last.setBorderPainted(false);
@@ -221,7 +221,7 @@ public class SuppliersView extends javax.swing.JPanel {
         jScrollPane1.setBorder(null);
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jt_suppliersTable.setBackground(new java.awt.Color(0, 150, 136));
+        jt_suppliersTable.setBackground(new java.awt.Color(48, 63, 159));
         jt_suppliersTable.setFont(new java.awt.Font("Trebuchet MS", 0, 10)); // NOI18N
         jt_suppliersTable.setForeground(new java.awt.Color(255, 255, 255));
         jt_suppliersTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -239,7 +239,7 @@ public class SuppliersView extends javax.swing.JPanel {
                 "ID", "Nom", "RFC", "Cal", "#", "Col", "Cd", "Est", "Con", "Tel", "@"
             }
         ));
-        jt_suppliersTable.setGridColor(new java.awt.Color(0, 121, 107));
+        jt_suppliersTable.setGridColor(new java.awt.Color(63, 81, 181));
         jt_suppliersTable.setSelectionBackground(new java.awt.Color(0, 121, 107));
         jt_suppliersTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jt_suppliersTable);
@@ -317,10 +317,10 @@ public class SuppliersView extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jb_remove)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jb_edit))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(jb_find))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jb_edit)
+                                    .addComponent(jb_find))))
+                        .addGap(3, 3, 3))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
         );

@@ -150,12 +150,26 @@ public class SuppliersModel {
         setValues();
     }
     
+    public void populateTable() {
+        for(int i = 0; i < tableModel.getRowCount(); i++) {
+            tableModel.removeRow(i);
+            i -= 1;
+        }
+        Object fields[] = new Object[]{1, "Cornelio", "5612304787", "Revolucion", 310, "Alamos", "Xalapa", "Veracruz", "Cornie", "5524791334", "cornie_es@live.com"};
+        tableModel.addRow(fields);
+        while(connection.toNext()) {
+            setValues();
+            tableModel.addRow(new Object []{supplierID, name, rfc, street, number, suburb, city, state, contact, phone, email});           
+        }
+    }
+    
     public void addSupplier(String name, String rfc, String street, int number, String suburb, String city,
                             String state, String contact, String phone, String email) {
         String add = "insert into proveedores (nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto, telefono, email)"
                    + "values ('"+name+"', '"+rfc+"', '"+street+"', '"+number+"', '"+suburb+"', '"+city+"', '"+state+"', '"+contact+"', '"+phone+"', '"+email+"');";
         connection.executeUpdate(add);
         initValues();
+        populateTable();
     }
     
     public void editSupplier(int supplierID, String name, String rfc, String street, int number, String suburb,
@@ -163,31 +177,24 @@ public class SuppliersModel {
         String edit = "update proveedores set nombre ='"+name+"', rfc ='"+rfc+"', calle ='"+street+"', numero ='"+number+"', colonia ='"+suburb+"', ciudad ='"+city+"', estado ='"+state+"', nombre_contacto ='"+contact+"', telefono ='"+phone+"', email ='"+email+"'" + "where id_proveedor =" +supplierID;
         connection.executeUpdate(edit);
         initValues();
+        populateTable();
     }
     
     public void removeSupplier(int supplierID) {
-        String remove = "delete from proveedores where id_proveedor=" +supplierID;
+        String remove = "delete from proveedores where id_proveedor =" +supplierID;
         connection.executeUpdate(remove);
         initValues();
+        populateTable();
     }
     
     public boolean findSupplier(String name) {
         boolean isFound = false;
-        String find = "select * from proveedores where nombre like "+name+"%;";
+        String find = "select * from proveedores where nombre = '"+name+"';";
         connection.executeQuery(find);
         connection.toNext();
         if(name.equals(connection.getString("nombre"))) {
             isFound = true;
         }
         return isFound;
-    }
-    
-    public void populateTable() {
-        Object fields[] = new Object[]{supplierID, name, rfc, street, number, suburb, city, state, contact, phone, email};
-        tableModel.addRow(fields);
-        while(connection.toNext()) {
-            setValues();
-            tableModel.addRow(new Object []{supplierID, name, rfc, street, number, suburb, city, state, contact, phone, email});           
-        }
     }
 }
