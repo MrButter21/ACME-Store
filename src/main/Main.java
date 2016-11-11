@@ -27,13 +27,20 @@ public class Main {
         ProductsModel productsModel = new ProductsModel();
         ProductsView productsView = new ProductsView();
         ProductsController productsController = new ProductsController(productsModel, productsView);
+        
+        PurchasesModel purchasesModel = new PurchasesModel();
+        PurchasesView purchasesView = new PurchasesView();
+        PurchasesController purchasesController = new PurchasesController(purchasesModel, purchasesView);
                 
-        JPanel paneArray[] = new JPanel[5];
+        JPanel paneArray[] = new JPanel[6];
         paneArray[0] = loginView;
         paneArray[1] = usersView;
+        
         paneArray[2] = customersView;
         paneArray[3] = suppliersView;
         paneArray[4] = productsView;
+        
+        paneArray[5] = purchasesView;
                 
         MainModel mainModel = new MainModel();
         MainView mainView = new MainView();

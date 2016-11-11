@@ -33,6 +33,8 @@ public class MainController implements ActionListener {
         this.mainView.jmi_customers.addActionListener(this);
         this.mainView.jmi_suppliers.addActionListener(this);
         this.mainView.jmi_products.addActionListener(this);
+        
+        this.mainView.jmi_purchases.addActionListener(this);
 
         
         initView();
@@ -54,6 +56,8 @@ public class MainController implements ActionListener {
         else if(x.getSource() == mainView.jmi_products)
             productsPane();
         
+        else if(x.getSource() == mainView.jmi_purchases)
+            purchasesPane();
     }
     
     public void initView() {
@@ -111,6 +115,12 @@ public class MainController implements ActionListener {
     
     public void productsPane() {
         mainView.setContentPane(paneArray[4]);
+        mainView.revalidate();
+        mainView.repaint();
+    }
+    
+    public void purchasesPane() {
+        mainView.setContentPane(paneArray[5]);
         mainView.revalidate();
         mainView.repaint();
     }

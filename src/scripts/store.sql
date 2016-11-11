@@ -50,38 +50,28 @@ create table if not exists clientes (
 
 create table if not exists ventas (
     id_venta smallint(5) not null auto_increment primary key,
-    fecha varchar(15) not null,
     id_cliente smallint(5) not null references clientes(id_cliente),
-    subtotal float(6) not null,
+    nombre varchar(50) not null references clientes(nombre),
+    id_producto smallint(5) not null references productos(id_producto),
+    producto varchar(50) not null references productos(producto),
+    precio_venta float(6) not null references productos(precio_venta),
+    cantidad int(10) not null,
     iva tinyint(4) not null,
+    subtotal float(6) not null,   
     total float(6) not null 	
 );
 
 create table if not exists compras (
     id_compra smallint(5) not null auto_increment primary key,
-    fecha varchar(15) not null,
     id_proveedor smallint(5) not null references proveedores(id_proveedor),
-    subtotal float(6) not null,
+    nombre varchar(50) not null references proveedores(nombre),
+    id_producto smallint(5) not null references productos(id_producto),
+    producto varchar(50) not null references productos(producto),
+    precio_compra float(6) not null references productos(precio_compra),
+    cantidad int(10) not null,
     iva tinyint(4) not null,
+    subtotal float(6) not null,
     total float(6) not null 	
-);
-
-create table if not exists detalleVentas (
-    id_det_venta smallint(5) not null auto_increment primary key,
-    id_venta smallint(5) not null references ventas(id_venta),
-    id_producto smallint(5) not null references productos(id_producto),
-    cantidad int(10) not null,
-    total_productos float(6) not null,
-    precio float(6) not null 	
-);
-
-create table if not exists detalleCompras (
-    id_det_compra smallint(5) not null auto_increment primary key,
-    id_compra smallint(5) not null references compras(id_compra),
-    id_producto smallint(5) not null references productos(id_producto),
-    cantidad int(10) not null,
-    total_productos float(6) not null,
-    precio float(6) not null 	
 );
 
 insert into usuarios(nombre, usuario, clave, nivel, estado)
@@ -110,4 +100,18 @@ values('Aceite', 'Aceite vegetal de maiz', '10.50', '26.00', '55');
 insert into productos(producto, descripcion, precio_compra, precio_venta, existencias)
 values('Salsa', 'Salsa de tomate con especias', '8.00', '21.50', '32');	
 insert into productos(producto, descripcion, precio_compra, precio_venta, existencias)
-values('Galletas', 'Galletas surtidas de chocolate', '12.50', '36.50', '30');		
+values('Galletas', 'Galletas surtidas de chocolate', '12.50', '36.50', '30');
+
+insert into compras(id_proveedor, nombre, id_producto, producto, precio_compra, cantidad, iva, subtotal, total)
+values('1', 'Cornelio', '3', 'Galletas', '12.50', '1', '15', '14.75', '14.75');
+insert into compras(id_proveedor, nombre, id_producto, producto, precio_compra, cantidad, iva, subtotal, total)
+values('2', 'Abdulio', '2', 'Salsa', '8.00', '2', '15', '9.20', '18.40');
+insert into compras(id_proveedor, nombre, id_producto, producto, precio_compra, cantidad, iva, subtotal, total)
+values('3', 'Sindulfa', '1', 'Aceite', '10.50', '3', '15', '12.75', '38.25');
+
+insert into ventas(id_cliente, nombre, id_producto, producto, precio_venta, cantidad, iva, subtotal, total)
+values('1', 'Rubi', '3', 'Galletas', '36.50', '1', '15', '41.75', '41.75');
+insert into ventas(id_cliente, nombre, id_producto, producto, precio_venta, cantidad, iva, subtotal, total)
+values('2', 'Sergio', '2', 'Salsa', '21.50', '2', '15', '24.75', '49.50');
+insert into ventas(id_cliente, nombre, id_producto, producto, precio_venta, cantidad, iva, subtotal, total)
+values('3', 'Sarah', '1', 'Aceite', '26.00', '3', '15', '29.90', '89.70');   		
