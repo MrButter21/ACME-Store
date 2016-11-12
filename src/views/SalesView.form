@@ -31,7 +31,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jtf_purchaseCost" max="32767" attributes="0"/>
+                              <Component id="jtf_saleCost" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
@@ -46,7 +46,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jtf_supplierID" max="32767" attributes="0"/>
+                              <Component id="jtf_customerID" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -63,7 +63,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jb_findProduct" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jb_add" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jb_findSupplier" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jb_findCustomer" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -106,7 +106,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jtf_supplierID" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jtf_customerID" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -125,7 +125,7 @@
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jb_findSupplier" min="-2" max="-2" attributes="0"/>
+                              <Component id="jb_findCustomer" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jb_findProduct" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -143,7 +143,7 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtf_purchaseCost" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtf_saleCost" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -189,7 +189,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="COMPRAS"/>
+        <Property name="text" type="java.lang.String" value="VENTAS"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -200,10 +200,10 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="ID Proveedor"/>
+        <Property name="text" type="java.lang.String" value="ID Cliente"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtf_supplierID">
+    <Component class="javax.swing.JTextField" name="jtf_customerID">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="9f" green="3f" red="30" type="rgb"/>
@@ -252,7 +252,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="jb_findSupplier">
+    <Component class="javax.swing.JButton" name="jb_findCustomer">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="b5" green="51" red="3f" type="rgb"/>
@@ -284,7 +284,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jt_purchasesTable">
+        <Component class="javax.swing.JTable" name="jt_salesTable">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="9f" green="3f" red="30" type="rgb"/>
@@ -299,7 +299,7 @@
               <Table columnCount="5" rowCount="8">
                 <Column editable="true" title="ID Producto" type="java.lang.Object"/>
                 <Column editable="true" title="Producto" type="java.lang.Object"/>
-                <Column editable="true" title="Precio de compra" type="java.lang.Object"/>
+                <Column editable="true" title="Precio de venta" type="java.lang.Object"/>
                 <Column editable="true" title="Cantidad" type="java.lang.Object"/>
                 <Column editable="true" title="Subtotal" type="java.lang.Object"/>
               </Table>
@@ -475,10 +475,10 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Precio de compra"/>
+        <Property name="text" type="java.lang.String" value="Precio de venta"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtf_purchaseCost">
+    <Component class="javax.swing.JTextField" name="jtf_saleCost">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="9f" green="3f" red="30" type="rgb"/>
@@ -645,7 +645,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Cerrar compra"/>
+        <Property name="text" type="java.lang.String" value="Cerrar venta"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>
@@ -666,7 +666,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nueva compra"/>
+        <Property name="text" type="java.lang.String" value="Nueva venta"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>

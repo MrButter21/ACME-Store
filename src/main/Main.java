@@ -31,8 +31,12 @@ public class Main {
         PurchasesModel purchasesModel = new PurchasesModel();
         PurchasesView purchasesView = new PurchasesView();
         PurchasesController purchasesController = new PurchasesController(purchasesModel, purchasesView);
+        
+        SalesModel salesModel = new SalesModel();
+        SalesView salesView = new SalesView();
+        SalesController salesController = new SalesController(salesModel, salesView);
                 
-        JPanel paneArray[] = new JPanel[6];
+        JPanel paneArray[] = new JPanel[7];
         paneArray[0] = loginView;
         paneArray[1] = usersView;
         
@@ -41,6 +45,7 @@ public class Main {
         paneArray[4] = productsView;
         
         paneArray[5] = purchasesView;
+        paneArray[6] = salesView;
                 
         MainModel mainModel = new MainModel();
         MainView mainView = new MainView();

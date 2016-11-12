@@ -13,11 +13,16 @@ public class MainController implements ActionListener {
     MainModel mainModel;
     
     MainView mainView;
+    
     LoginView loginView;
     UsersView usersView;
+    
     CustomersView customersView;
     SuppliersView suppliersView;
     ProductsView productsView;
+    
+    PurchasesView purchasesView;
+    SalesView salesView;
     
     JPanel paneArray [];
 
@@ -35,8 +40,8 @@ public class MainController implements ActionListener {
         this.mainView.jmi_products.addActionListener(this);
         
         this.mainView.jmi_purchases.addActionListener(this);
-
-        
+        this.mainView.jmi_sales.addActionListener(this);
+   
         initView();
     }
 
@@ -58,6 +63,8 @@ public class MainController implements ActionListener {
         
         else if(x.getSource() == mainView.jmi_purchases)
             purchasesPane();
+        else if(x.getSource() == mainView.jmi_sales)
+            salesPane();
     }
     
     public void initView() {
@@ -125,8 +132,14 @@ public class MainController implements ActionListener {
         mainView.repaint();
     }
     
+    public void salesPane() {
+        mainView.setContentPane(paneArray[6]);
+        mainView.revalidate();
+        mainView.repaint();
+    }
+    
     public void close() {
-        int confirm = JOptionPane.showConfirmDialog(null, "¿Desea salir del programa?", "Aviso", JOptionPane.YES_NO_OPTION);
+        int confirm = JOptionPane.showConfirmDialog(null, "¿Desea salir del sistema?", "Aviso", JOptionPane.YES_NO_OPTION);
         if(confirm == JOptionPane.YES_OPTION)
             System.exit(0);
     }

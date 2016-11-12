@@ -49,7 +49,7 @@ public class PurchasesController implements ActionListener {
         if(purchasesModel.findSupplier(supplierID))
             purchasesView.jtf_name.setText(purchasesModel.supplierName);
         else {
-            JOptionPane.showMessageDialog(null, "No existe este registro en la tabla.");
+            JOptionPane.showMessageDialog(null, "No existe este registro en la tabla." , "Aviso", JOptionPane.WARNING_MESSAGE);
             purchasesView.jtf_supplierID.setText("");
             purchasesView.jtf_name.setText("");
         }
@@ -62,7 +62,7 @@ public class PurchasesController implements ActionListener {
             purchasesView.jtf_purchaseCost.setText("" + purchasesModel.purchaseCost);
         }
         else {
-            JOptionPane.showMessageDialog(null, "No existe este registro en la tabla.");
+            JOptionPane.showMessageDialog(null, "No existe este registro en la tabla.", "Aviso", JOptionPane.WARNING_MESSAGE);
             purchasesView.jtf_productID.setText("");
             purchasesView.jtf_product.setText("");
             purchasesView.jtf_purchaseCost.setText("");
@@ -77,11 +77,11 @@ public class PurchasesController implements ActionListener {
         float purchaseCost = Float.parseFloat(purchasesView.jtf_purchaseCost.getText());
         int quantity = Integer.parseInt(purchasesView.jtf_quantity.getText());
         int vat = 15;
-        float subtotal = (float)(purchaseCost * 0.15);
+        float subtotal = ((float)(purchaseCost * 0.15) + purchaseCost);
         float total = subtotal * quantity;
-        purchasesView.jtf_vat.setText("" + vat);
-        purchasesView.jtf_sub.setText("" + subtotal);
-        purchasesView.jtf_total.setText("" + total);
+        purchasesView.jtf_vat.setText("" + vat + " %" + " =" + " 0.15");
+        purchasesView.jtf_sub.setText("" + subtotal + " $");
+        purchasesView.jtf_total.setText("" + total + " $");
         purchasesModel.addProduct(supplierID, name, productID, product, purchaseCost, quantity, vat, subtotal, total);
     }
     
@@ -96,14 +96,24 @@ public class PurchasesController implements ActionListener {
         purchasesView.jtf_vat.setText("");
         purchasesView.jtf_sub.setText("");
         purchasesView.jtf_total.setText("");
+        for(int i = 0; i < purchasesModel.tableModel.getRowCount(); i++) {
+            purchasesModel.tableModel.removeRow(i);
+            i -= 1;
+        }
     }
     
     public void savePurchase() {
-        JOptionPane.showMessageDialog(null, "Tu compra se ha realizado exitosamente.");
+        if(purchasesView.jtf_supplierID.getText().isEmpty() || purchasesView.jtf_name.getText().isEmpty() ||
+        purchasesView.jtf_productID.getText().isEmpty() || purchasesView.jtf_product.getText().isEmpty() ||
+        purchasesView.jtf_purchaseCost.getText().isEmpty() || purchasesView.jtf_quantity.getText().isEmpty() ||
+        purchasesView.jtf_vat.getText().isEmpty() || purchasesView.jtf_sub.getText().isEmpty() || purchasesView.jtf_total.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No puedes efectuar la compra. Existen campos vacíos.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        else
+        JOptionPane.showMessageDialog(null, "Tu compra se ha realizado exitosamente.", "Compra completada", JOptionPane.INFORMATION_MESSAGE);
     }
     
     private void showRecords() {
         purchasesView.jt_purchasesTable.setModel(purchasesModel.tableModel);
-        purchasesModel.populateTable();
     }
 }

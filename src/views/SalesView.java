@@ -9,12 +9,12 @@ package views;
  *
  * @author Sergio
  */
-public class PurchasesView extends javax.swing.JPanel {
+public class SalesView extends javax.swing.JPanel {
 
     /**
      * Creates new form CustomersView
      */
-    public PurchasesView() {
+    public SalesView() {
         initComponents();
     }
 
@@ -29,19 +29,19 @@ public class PurchasesView extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jtf_supplierID = new javax.swing.JTextField();
+        jtf_customerID = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jtf_name = new javax.swing.JTextField();
-        jb_findSupplier = new javax.swing.JButton();
+        jb_findCustomer = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jt_purchasesTable = new javax.swing.JTable();
+        jt_salesTable = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jtf_productID = new javax.swing.JTextField();
         jtf_product = new javax.swing.JTextField();
         jb_findProduct = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        jtf_purchaseCost = new javax.swing.JTextField();
+        jtf_saleCost = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jtf_quantity = new javax.swing.JTextField();
         jb_add = new javax.swing.JButton();
@@ -60,16 +60,16 @@ public class PurchasesView extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("COMPRAS");
+        jLabel1.setText("VENTAS");
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("ID Proveedor");
+        jLabel2.setText("ID Cliente");
 
-        jtf_supplierID.setBackground(new java.awt.Color(48, 63, 159));
-        jtf_supplierID.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_supplierID.setForeground(new java.awt.Color(255, 255, 255));
-        jtf_supplierID.setBorder(null);
+        jtf_customerID.setBackground(new java.awt.Color(48, 63, 159));
+        jtf_customerID.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jtf_customerID.setForeground(new java.awt.Color(255, 255, 255));
+        jtf_customerID.setBorder(null);
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -80,18 +80,18 @@ public class PurchasesView extends javax.swing.JPanel {
         jtf_name.setForeground(new java.awt.Color(255, 255, 255));
         jtf_name.setBorder(null);
 
-        jb_findSupplier.setBackground(new java.awt.Color(63, 81, 181));
-        jb_findSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/find_user.png"))); // NOI18N
-        jb_findSupplier.setBorder(null);
-        jb_findSupplier.setBorderPainted(false);
+        jb_findCustomer.setBackground(new java.awt.Color(63, 81, 181));
+        jb_findCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/find_user.png"))); // NOI18N
+        jb_findCustomer.setBorder(null);
+        jb_findCustomer.setBorderPainted(false);
 
         jScrollPane1.setBorder(null);
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jt_purchasesTable.setBackground(new java.awt.Color(48, 63, 159));
-        jt_purchasesTable.setFont(new java.awt.Font("Trebuchet MS", 0, 10)); // NOI18N
-        jt_purchasesTable.setForeground(new java.awt.Color(255, 255, 255));
-        jt_purchasesTable.setModel(new javax.swing.table.DefaultTableModel(
+        jt_salesTable.setBackground(new java.awt.Color(48, 63, 159));
+        jt_salesTable.setFont(new java.awt.Font("Trebuchet MS", 0, 10)); // NOI18N
+        jt_salesTable.setForeground(new java.awt.Color(255, 255, 255));
+        jt_salesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -103,13 +103,13 @@ public class PurchasesView extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID Producto", "Producto", "Precio de compra", "Cantidad", "Subtotal"
+                "ID Producto", "Producto", "Precio de venta", "Cantidad", "Subtotal"
             }
         ));
-        jt_purchasesTable.setGridColor(new java.awt.Color(63, 81, 181));
-        jt_purchasesTable.setSelectionBackground(new java.awt.Color(0, 121, 107));
-        jt_purchasesTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setViewportView(jt_purchasesTable);
+        jt_salesTable.setGridColor(new java.awt.Color(63, 81, 181));
+        jt_salesTable.setSelectionBackground(new java.awt.Color(0, 121, 107));
+        jt_salesTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(jt_salesTable);
 
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -141,12 +141,12 @@ public class PurchasesView extends javax.swing.JPanel {
 
         jLabel10.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Precio de compra");
+        jLabel10.setText("Precio de venta");
 
-        jtf_purchaseCost.setBackground(new java.awt.Color(48, 63, 159));
-        jtf_purchaseCost.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_purchaseCost.setForeground(new java.awt.Color(255, 255, 255));
-        jtf_purchaseCost.setBorder(null);
+        jtf_saleCost.setBackground(new java.awt.Color(48, 63, 159));
+        jtf_saleCost.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jtf_saleCost.setForeground(new java.awt.Color(255, 255, 255));
+        jtf_saleCost.setBorder(null);
 
         jLabel11.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -192,14 +192,14 @@ public class PurchasesView extends javax.swing.JPanel {
         jb_save.setBackground(new java.awt.Color(48, 63, 159));
         jb_save.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jb_save.setForeground(new java.awt.Color(255, 255, 255));
-        jb_save.setText("Cerrar compra");
+        jb_save.setText("Cerrar venta");
         jb_save.setBorder(null);
         jb_save.setBorderPainted(false);
 
         jb_new.setBackground(new java.awt.Color(48, 63, 159));
         jb_new.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jb_new.setForeground(new java.awt.Color(255, 255, 255));
-        jb_new.setText("Nueva compra");
+        jb_new.setText("Nueva venta");
         jb_new.setBorder(null);
         jb_new.setBorderPainted(false);
 
@@ -217,7 +217,7 @@ public class PurchasesView extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtf_purchaseCost))
+                                .addComponent(jtf_saleCost))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -229,7 +229,7 @@ public class PurchasesView extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtf_supplierID))
+                                .addComponent(jtf_customerID))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -242,7 +242,7 @@ public class PurchasesView extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jb_findProduct)
                             .addComponent(jb_add)
-                            .addComponent(jb_findSupplier))
+                            .addComponent(jb_findCustomer))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -275,7 +275,7 @@ public class PurchasesView extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel2)
-                                    .addComponent(jtf_supplierID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jtf_customerID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel3)
@@ -289,7 +289,7 @@ public class PurchasesView extends javax.swing.JPanel {
                                     .addComponent(jLabel14)
                                     .addComponent(jtf_product, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jb_findSupplier)
+                                .addComponent(jb_findCustomer)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jb_findProduct)))
                         .addGap(8, 8, 8))
@@ -302,7 +302,7 @@ public class PurchasesView extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(jtf_purchaseCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jtf_saleCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
@@ -344,18 +344,18 @@ public class PurchasesView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton jb_add;
+    public javax.swing.JButton jb_findCustomer;
     public javax.swing.JButton jb_findProduct;
-    public javax.swing.JButton jb_findSupplier;
     public javax.swing.JButton jb_new;
     public javax.swing.JButton jb_save;
-    public javax.swing.JTable jt_purchasesTable;
+    public javax.swing.JTable jt_salesTable;
+    public javax.swing.JTextField jtf_customerID;
     public javax.swing.JTextField jtf_name;
     public javax.swing.JTextField jtf_product;
     public javax.swing.JTextField jtf_productID;
-    public javax.swing.JTextField jtf_purchaseCost;
     public javax.swing.JTextField jtf_quantity;
+    public javax.swing.JTextField jtf_saleCost;
     public javax.swing.JTextField jtf_sub;
-    public javax.swing.JTextField jtf_supplierID;
     public javax.swing.JTextField jtf_total;
     public javax.swing.JTextField jtf_vat;
     // End of variables declaration//GEN-END:variables

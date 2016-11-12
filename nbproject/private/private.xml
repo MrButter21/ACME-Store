@@ -2,6 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/BLABPC23/Documents/NetBeansProjects/ACME-Store/src/models/SalesModel.java</file>
+            <file>file:/C:/Users/BLABPC23/Documents/NetBeansProjects/ACME-Store/src/controllers/SalesController.java</file>
+            <file>file:/C:/Users/BLABPC23/Documents/NetBeansProjects/ACME-Store/src/views/SalesView.java</file>
+            <file>file:/C:/Users/BLABPC23/Documents/NetBeansProjects/ACME-Store/src/scripts/store.sql</file>
+        </group>
     </open-files>
 </project-private>

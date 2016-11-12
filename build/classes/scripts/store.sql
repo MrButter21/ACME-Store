@@ -100,7 +100,7 @@ values('Aceite', 'Aceite vegetal de maiz', '10.50', '26.00', '55');
 insert into productos(producto, descripcion, precio_compra, precio_venta, existencias)
 values('Salsa', 'Salsa de tomate con especias', '8.00', '21.50', '32');	
 insert into productos(producto, descripcion, precio_compra, precio_venta, existencias)
-values('Galletas', 'Galletas surtidas de chocolate', '12.50', '36.50', '30');
+values('Galletas', 'Galletas surtidas de chocolate', '12.50', '36.50', '30'); 		
 
 insert into compras(id_proveedor, nombre, id_producto, producto, precio_compra, cantidad, iva, subtotal, total)
 values('1', 'Cornelio', '3', 'Galletas', '12.50', '1', '15', '14.75', '14.75');
