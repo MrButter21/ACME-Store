@@ -240,7 +240,7 @@ public class SuppliersView extends javax.swing.JPanel {
             }
         ));
         jt_suppliersTable.setGridColor(new java.awt.Color(63, 81, 181));
-        jt_suppliersTable.setSelectionBackground(new java.awt.Color(0, 121, 107));
+        jt_suppliersTable.setSelectionBackground(new java.awt.Color(63, 81, 181));
         jt_suppliersTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jt_suppliersTable);
 

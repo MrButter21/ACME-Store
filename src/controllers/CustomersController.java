@@ -89,39 +89,49 @@ public class CustomersController implements ActionListener {
         showValues();
     }
     
-    public void addCustomer() {             
-        String name = customersView.jtf_name.getText();
-        String surname1 = customersView.jtf_surname1.getText();
-        String surname2 = customersView.jtf_surname2.getText();
-        String phone = customersView.jtf_phone.getText();
-        String email = customersView.jtf_email.getText();
-        String rfc = customersView.jtf_rfc.getText();
-        String street = customersView.jtf_street.getText();
-        int number = Integer.parseInt(customersView.jtf_number.getText());
-        String suburb = customersView.jtf_suburb.getText();
-        String city = customersView.jtf_city.getText();
-        String state = customersView.jtf_state.getText();
-        customersModel.addCustomer(name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state);
-        customersModel.setValues();
-        showValues();
+    public void addCustomer() {
+        try {
+            String name = customersView.jtf_name.getText();
+            String surname1 = customersView.jtf_surname1.getText();
+            String surname2 = customersView.jtf_surname2.getText();
+            String phone = customersView.jtf_phone.getText();
+            String email = customersView.jtf_email.getText();
+            String rfc = customersView.jtf_rfc.getText();
+            String street = customersView.jtf_street.getText();
+            int number = Integer.parseInt(customersView.jtf_number.getText());
+            String suburb = customersView.jtf_suburb.getText();
+            String city = customersView.jtf_city.getText();
+            String state = customersView.jtf_state.getText();
+            customersModel.addCustomer(name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state);
+            customersModel.setValues();
+            showValues();
+        }
+        catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     public void editCustomer() {
-        int customerID = Integer.parseInt(customersView.jtf_id.getText());
-        String name = customersView.jtf_name.getText();
-        String surname1 = customersView.jtf_surname1.getText();
-        String surname2 = customersView.jtf_surname2.getText();
-        String phone = customersView.jtf_phone.getText();
-        String email = customersView.jtf_email.getText();
-        String rfc = customersView.jtf_rfc.getText();
-        String street = customersView.jtf_street.getText();
-        int number = Integer.parseInt(customersView.jtf_number.getText());
-        String suburb = customersView.jtf_suburb.getText();
-        String city = customersView.jtf_city.getText();
-        String state = customersView.jtf_state.getText();
-        customersModel.editCustomer(customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state);
-        customersModel.setValues();
-        showValues();
+        try {
+            int customerID = Integer.parseInt(customersView.jtf_id.getText());
+            String name = customersView.jtf_name.getText();
+            String surname1 = customersView.jtf_surname1.getText();
+            String surname2 = customersView.jtf_surname2.getText();
+            String phone = customersView.jtf_phone.getText();
+            String email = customersView.jtf_email.getText();
+            String rfc = customersView.jtf_rfc.getText();
+            String street = customersView.jtf_street.getText();
+            int number = Integer.parseInt(customersView.jtf_number.getText());
+            String suburb = customersView.jtf_suburb.getText();
+            String city = customersView.jtf_city.getText();
+            String state = customersView.jtf_state.getText();
+            customersModel.editCustomer(customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state);
+            customersModel.setValues();
+            showValues();
+        }
+        catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     public void removeCustomer() {

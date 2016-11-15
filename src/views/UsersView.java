@@ -163,7 +163,7 @@ public class UsersView extends javax.swing.JPanel {
             }
         ));
         jt_usersTable.setGridColor(new java.awt.Color(63, 81, 181));
-        jt_usersTable.setSelectionBackground(new java.awt.Color(0, 121, 107));
+        jt_usersTable.setSelectionBackground(new java.awt.Color(63, 81, 181));
         jt_usersTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jt_usersTable);
 

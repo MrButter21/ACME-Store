@@ -75,7 +75,7 @@ create table if not exists compras (
 );
 
 insert into usuarios(nombre, usuario, clave, nivel, estado)
-values('Sergio', 'MrButter21', 'Alessandra2000', 'Administrador', 'Activo');
+values('Sergio', 'MrButter22', 'Alessandra2000', 'Administrador', 'Activo');
 insert into usuarios(nombre, usuario, clave, nivel, estado)
 values('Alessandra', 'dead_alex12', 'EssO&R456', 'Cliente', 'Activo');
 insert into usuarios(nombre, usuario, clave, nivel, estado)

@@ -88,37 +88,47 @@ public class SuppliersController implements ActionListener {
         showValues();
     }
     
-    public void addSupplier() {             
-        String name = suppliersView.jtf_name.getText();
-        String rfc = suppliersView.jtf_rfc.getText();
-        String street = suppliersView.jtf_street.getText();
-        int number = Integer.parseInt(suppliersView.jtf_number.getText());
-        String suburb = suppliersView.jtf_suburb.getText();
-        String city = suppliersView.jtf_city.getText();
-        String state = suppliersView.jtf_state.getText();
-        String contact = suppliersView.jtf_contact.getText();
-        String phone = suppliersView.jtf_phone.getText();
-        String email = suppliersView.jtf_email.getText();
-        suppliersModel.addSupplier(name, rfc, street, number, suburb, city, state, contact, phone, email);
-        suppliersModel.setValues();
-        showValues();
+    public void addSupplier() {
+        try {
+            String name = suppliersView.jtf_name.getText();
+            String rfc = suppliersView.jtf_rfc.getText();
+            String street = suppliersView.jtf_street.getText();
+            int number = Integer.parseInt(suppliersView.jtf_number.getText());
+            String suburb = suppliersView.jtf_suburb.getText();
+            String city = suppliersView.jtf_city.getText();
+            String state = suppliersView.jtf_state.getText();
+            String contact = suppliersView.jtf_contact.getText();
+            String phone = suppliersView.jtf_phone.getText();
+            String email = suppliersView.jtf_email.getText();
+            suppliersModel.addSupplier(name, rfc, street, number, suburb, city, state, contact, phone, email);
+            suppliersModel.setValues();
+            showValues();
+        }
+        catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     public void editSupplier() {
-        int supplierID = Integer.parseInt(suppliersView.jtf_id.getText());
-        String name = suppliersView.jtf_name.getText();
-        String rfc = suppliersView.jtf_rfc.getText();
-        String street = suppliersView.jtf_street.getText();
-        int number = Integer.parseInt(suppliersView.jtf_number.getText());
-        String suburb = suppliersView.jtf_suburb.getText();
-        String city = suppliersView.jtf_city.getText();
-        String state = suppliersView.jtf_state.getText();
-        String contact = suppliersView.jtf_contact.getText();
-        String phone = suppliersView.jtf_phone.getText();
-        String email = suppliersView.jtf_email.getText();
-        suppliersModel.editSupplier(supplierID, name, rfc, street, number, suburb, city, state, contact, phone, email);
-        suppliersModel.setValues();
-        showValues();
+        try {
+            int supplierID = Integer.parseInt(suppliersView.jtf_id.getText());
+            String name = suppliersView.jtf_name.getText();
+            String rfc = suppliersView.jtf_rfc.getText();
+            String street = suppliersView.jtf_street.getText();
+            int number = Integer.parseInt(suppliersView.jtf_number.getText());
+            String suburb = suppliersView.jtf_suburb.getText();
+            String city = suppliersView.jtf_city.getText();
+            String state = suppliersView.jtf_state.getText();
+            String contact = suppliersView.jtf_contact.getText();
+            String phone = suppliersView.jtf_phone.getText();
+            String email = suppliersView.jtf_email.getText();
+            suppliersModel.editSupplier(supplierID, name, rfc, street, number, suburb, city, state, contact, phone, email);
+            suppliersModel.setValues();
+            showValues();
+        }
+        catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     public void removeSupplier() {

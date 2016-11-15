@@ -94,7 +94,7 @@ public class UsersModel {
             tableModel.removeRow(i);
             i -= 1;
         }
-        Object fields[] = new Object[]{"MrButter21", "Administrador", "Activo"};
+        Object fields[] = new Object[]{"MrButter22", "Administrador", "Activo"};
         tableModel.addRow(fields);
         while(connection.toNext()) {
             setValues();

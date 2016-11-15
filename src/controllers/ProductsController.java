@@ -83,27 +83,37 @@ public class ProductsController implements ActionListener {
         showValues();
     }
     
-    public void addProduct() {             
-        String product = productsView.jtf_product.getText();
-        String description = productsView.jtf_description.getText();
-        float purchaseCost = Float.parseFloat(productsView.jtf_purchaseCost.getText());
-        float saleCost = Float.parseFloat(productsView.jtf_saleCost.getText());
-        int stock = Integer.parseInt(productsView.jtf_stock.getText());
-        productsModel.addProduct(product, description, purchaseCost, saleCost, stock);
-        productsModel.setValues();
-        showValues();
+    public void addProduct() {
+        try {
+            String product = productsView.jtf_product.getText();
+            String description = productsView.jtf_description.getText();
+            float purchaseCost = Float.parseFloat(productsView.jtf_purchaseCost.getText());
+            float saleCost = Float.parseFloat(productsView.jtf_saleCost.getText());
+            int stock = Integer.parseInt(productsView.jtf_stock.getText());
+            productsModel.addProduct(product, description, purchaseCost, saleCost, stock);
+            productsModel.setValues();
+            showValues();
+        }
+        catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     public void editProduct() {
-        int productID = Integer.parseInt(productsView.jtf_id.getText());
-        String product = productsView.jtf_product.getText();
-        String description = productsView.jtf_description.getText();
-        float purchaseCost = Float.parseFloat(productsView.jtf_purchaseCost.getText());
-        float saleCost = Float.parseFloat(productsView.jtf_saleCost.getText());
-        int stock = Integer.parseInt(productsView.jtf_stock.getText());
-        productsModel.editProduct(productID, product, description, purchaseCost, saleCost, stock);
-        productsModel.setValues();
-        showValues();
+        try {
+            int productID = Integer.parseInt(productsView.jtf_id.getText());
+            String product = productsView.jtf_product.getText();
+            String description = productsView.jtf_description.getText();
+            float purchaseCost = Float.parseFloat(productsView.jtf_purchaseCost.getText());
+            float saleCost = Float.parseFloat(productsView.jtf_saleCost.getText());
+            int stock = Integer.parseInt(productsView.jtf_stock.getText());
+            productsModel.editProduct(productID, product, description, purchaseCost, saleCost, stock);
+            productsModel.setValues();
+            showValues();
+        }
+        catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     public void removeProduct() {

@@ -79,7 +79,7 @@ public class UsersController implements ActionListener {
         showValues();
     }
     
-    public void addUser() {             
+    public void addUser() {
         String name = usersView.jtf_name.getText();
         String user = usersView.jtf_user.getText();
         String password = usersView.jpf_password.getText();

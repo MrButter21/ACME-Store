@@ -44,32 +44,43 @@ public class SalesController implements ActionListener {
         salesModel.setValues();
     }
     
-    public void findCustomer() {             
-        int customerID = Integer.parseInt(salesView.jtf_customerID.getText());
-        if(salesModel.findCustomer(customerID))
-            salesView.jtf_name.setText(salesModel.customerName);
-        else {
-            JOptionPane.showMessageDialog(null, "No existe este registro en la tabla.", "Aviso", JOptionPane.WARNING_MESSAGE);
-            salesView.jtf_customerID.setText("");
-            salesView.jtf_name.setText("");
+    public void findCustomer() {
+        try {
+            int customerID = Integer.parseInt(salesView.jtf_customerID.getText());
+            if(salesModel.findCustomer(customerID))
+                salesView.jtf_name.setText(salesModel.customerName);
+            else {
+                JOptionPane.showMessageDialog(null, "No existe este registro en la tabla.", "Aviso", JOptionPane.WARNING_MESSAGE);
+                salesView.jtf_customerID.setText("");
+                salesView.jtf_name.setText("");
+            }
+        }
+        catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
-    public void findProduct() {             
-        int productID = Integer.parseInt(salesView.jtf_productID.getText());
-        if(salesModel.findProduct(productID)) {
-            salesView.jtf_product.setText(salesModel.product);
-            salesView.jtf_saleCost.setText("" + salesModel.saleCost);
+    public void findProduct() {
+        try {
+            int productID = Integer.parseInt(salesView.jtf_productID.getText());
+            if(salesModel.findProduct(productID)) {
+                salesView.jtf_product.setText(salesModel.product);
+                salesView.jtf_saleCost.setText("" + salesModel.saleCost);
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "No existe este registro en la tabla.", "Aviso", JOptionPane.WARNING_MESSAGE);
+                salesView.jtf_productID.setText("");
+                salesView.jtf_product.setText("");
+                salesView.jtf_saleCost.setText("");
+            }
         }
-        else {
-            JOptionPane.showMessageDialog(null, "No existe este registro en la tabla.", "Aviso", JOptionPane.WARNING_MESSAGE);
-            salesView.jtf_productID.setText("");
-            salesView.jtf_product.setText("");
-            salesView.jtf_saleCost.setText("");
-        }
+        catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+        }    
     }
     
     public void addProduct() {
+        try {
         int customerID = Integer.parseInt(salesView.jtf_customerID.getText());
         String name = salesView.jtf_name.getText();
         int productID = Integer.parseInt(salesView.jtf_productID.getText());
@@ -83,6 +94,10 @@ public class SalesController implements ActionListener {
         salesView.jtf_sub.setText("" + subtotal + " $");
         salesView.jtf_total.setText("" + total + " $");
         salesModel.addProduct(customerID, name, productID, product, saleCost, quantity, vat, subtotal, total);
+        }
+        catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     public void newSale() {

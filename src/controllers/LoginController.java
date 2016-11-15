@@ -39,7 +39,7 @@ public class LoginController implements ActionListener {
         String user = loginView.jtf_user.getText();
         String password = loginView.jpf_password.getText();
         if(loginModel.login(user, password)) {
-            JOptionPane.showMessageDialog(null, "Bienvenido(a). Acabas de ingresar al sistema.");
+            JOptionPane.showMessageDialog(null, "Bienvenido(a). Acabas de ingresar al sistema.", "Acceso autorizado", JOptionPane.INFORMATION_MESSAGE);
             loginView.jl_title.setVisible(false);
             loginView.jl_header1.setVisible(false);
             loginView.jtf_user.setVisible(false);
@@ -99,10 +99,10 @@ public class LoginController implements ActionListener {
             }
         }
         else if(loginView.jtf_user.getText().isEmpty() || loginView.jpf_password.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "No puedes dejar campos vacíos.");
+            JOptionPane.showMessageDialog(null, "No puedes dejar campos vacíos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
         else {
-            JOptionPane.showMessageDialog(null, "No puedes ingresar. No eres un usuario válido.");
+            JOptionPane.showMessageDialog(null, "No puedes ingresar. No eres un usuario válido.", "Aviso", JOptionPane.WARNING_MESSAGE);
             loginView.jtf_user.setText("");
             loginView.jpf_password.setText("");
         }

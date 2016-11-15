@@ -44,32 +44,43 @@ public class PurchasesController implements ActionListener {
         purchasesModel.setValues();
     }
     
-    public void findSupplier() {             
-        int supplierID = Integer.parseInt(purchasesView.jtf_supplierID.getText());
-        if(purchasesModel.findSupplier(supplierID))
-            purchasesView.jtf_name.setText(purchasesModel.supplierName);
-        else {
-            JOptionPane.showMessageDialog(null, "No existe este registro en la tabla." , "Aviso", JOptionPane.WARNING_MESSAGE);
-            purchasesView.jtf_supplierID.setText("");
-            purchasesView.jtf_name.setText("");
+    public void findSupplier() {
+        try {
+            int supplierID = Integer.parseInt(purchasesView.jtf_supplierID.getText());
+            if(purchasesModel.findSupplier(supplierID))
+                purchasesView.jtf_name.setText(purchasesModel.supplierName);
+            else {
+                JOptionPane.showMessageDialog(null, "No existe este registro en la tabla." , "Aviso", JOptionPane.WARNING_MESSAGE);
+                purchasesView.jtf_supplierID.setText("");
+                purchasesView.jtf_name.setText("");
+            }
+        }
+        catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
-    public void findProduct() {             
-        int productID = Integer.parseInt(purchasesView.jtf_productID.getText());
-        if(purchasesModel.findProduct(productID)) {
-            purchasesView.jtf_product.setText(purchasesModel.product);
-            purchasesView.jtf_purchaseCost.setText("" + purchasesModel.purchaseCost);
+    public void findProduct() {
+        try {
+            int productID = Integer.parseInt(purchasesView.jtf_productID.getText());
+            if(purchasesModel.findProduct(productID)) {
+                purchasesView.jtf_product.setText(purchasesModel.product);
+                purchasesView.jtf_purchaseCost.setText("" + purchasesModel.purchaseCost);
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "No existe este registro en la tabla.", "Aviso", JOptionPane.WARNING_MESSAGE);
+                purchasesView.jtf_productID.setText("");
+                purchasesView.jtf_product.setText("");
+                purchasesView.jtf_purchaseCost.setText("");
+            }
         }
-        else {
-            JOptionPane.showMessageDialog(null, "No existe este registro en la tabla.", "Aviso", JOptionPane.WARNING_MESSAGE);
-            purchasesView.jtf_productID.setText("");
-            purchasesView.jtf_product.setText("");
-            purchasesView.jtf_purchaseCost.setText("");
+        catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
     public void addProduct() {
+        try {
         int supplierID = Integer.parseInt(purchasesView.jtf_supplierID.getText());
         String name = purchasesView.jtf_name.getText();
         int productID = Integer.parseInt(purchasesView.jtf_productID.getText());
@@ -83,6 +94,10 @@ public class PurchasesController implements ActionListener {
         purchasesView.jtf_sub.setText("" + subtotal + " $");
         purchasesView.jtf_total.setText("" + total + " $");
         purchasesModel.addProduct(supplierID, name, productID, product, purchaseCost, quantity, vat, subtotal, total);
+        }
+        catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     public void newPurchase() {
