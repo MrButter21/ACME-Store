@@ -118,7 +118,7 @@ public class SalesModel {
         String find = "select * from clientes where id_cliente = '"+customerID+"';";
         connection.executeQuery(find);
         connection.toNext();
-        if(customerID == connection.getInteger("id_proveedor")) {
+        if(customerID == connection.getInteger("id_cliente")) {
             isFound = true;
             customerName = connection.getString("nombre");
         }
