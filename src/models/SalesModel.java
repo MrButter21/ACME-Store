@@ -1,24 +1,27 @@
 package models;
 
+import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 
-import sogc.MySQLConnection;
+import sogc.MyBearyConnection;
 
 public class SalesModel {
     public int saleID;
-    public int customerID;    
-    public String customerName;
-    public int productID;
-    public String product;
-    public float saleCost;
+    public String product;    
     public int quantity;
-    public int vat;
-    public float subtotal;    
-    public float total;
+    public int saleCost;   
+    public int totalProduct;
     
-    public DefaultTableModel tableModel = new DefaultTableModel(new String [] {"ID Producto", "Producto", "Precio de venta", "Cantidad", "Subtotal"}, 0);
+    public String customerName;
+    public String date;
+    public int totalSale;
     
-    MySQLConnection connection = new MySQLConnection(3306, "localhost", "store", "root", "");
+    public Date day = new Date();
+    
+    public DefaultTableModel firstTable = new DefaultTableModel(new String [] {"ID Venta", "Producto", "Cantidad", "Precio de venta", "Subtotal"}, 0);
+    public DefaultTableModel secondTable = new DefaultTableModel(new String [] {"Nombre", "Fecha", "Total"}, 0);
+    
+    MyBearyConnection connection = new MyBearyConnection(3306, "localhost", "store", "root", "");
 
     public int getSaleID() {
         return saleID;
@@ -28,12 +31,36 @@ public class SalesModel {
         this.saleID = saleID;
     }
     
-    public int getCustomerID() {
-        return customerID;
+    public String getProduct() {
+        return product;
     }
 
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
+    public void setProduct(String product) {
+        this.product = product;
+    }
+    
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+    
+    public int getSaleCost() {
+        return saleCost;
+    }
+
+    public void setSaleCost(int saleCost) {
+        this.saleCost = saleCost;
+    }
+
+    public int getTotalProduct() {
+        return totalProduct;
+    }
+
+    public void setTotalProduct(int totalProduct) {
+        this.totalProduct = totalProduct;
     }
 
     public String getCustomerName() {
@@ -44,79 +71,46 @@ public class SalesModel {
         this.customerName = customerName;
     }
 
-    public int getProductID() {
-        return productID;
+    public String getDate() {
+        return date;
     }
 
-    public void setProductID(int productID) {
-        this.productID = productID;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public String getProduct() {
-        return product;
+    public int getTotalSale() {
+        return totalSale;
     }
 
-    public void setProduct(String product) {
-        this.product = product;
-    }
-
-    public float getSaleCost() {
-        return saleCost;
-    }
-
-    public void setSaleCost(float saleCost) {
-        this.saleCost = saleCost;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public int getVAT() {
-        return vat;
-    }
-
-    public void setVAT(int vat) {
-        this.vat = vat;
-    }
-
-    public float getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(float subtotal) {
-        this.subtotal = subtotal;
-    }
-
-    public float getTotal() {
-        return total;
-    }
-
-    public void setTotal(float total) {
-        this.total = total;
+    public void setTotalSale(int totalSale) {
+        this.totalSale = totalSale;
     }
     
     public void initValues() {
-        String sql = "select * from ventas";
+        String sql = "select * from detalle_ventas";
         connection.executeQuery(sql);
         connection.toNext();
     }
     
     public void setValues() {
         saleID = connection.getInteger("id_venta");
-        customerID = connection.getInteger("id_cliente");
-        customerName = connection.getString("nombre");
-        productID = connection.getInteger("id_producto");
         product = connection.getString("producto");
-        saleCost = connection.getFloat("precio_venta");
         quantity = connection.getInteger("cantidad");
-        vat = connection.getInteger("iva");
-        subtotal = connection.getFloat("subtotal");
-        total = connection.getFloat("total");
+        saleCost = connection.getInteger("precio_venta");
+        totalProduct = connection.getInteger("total_producto");
+    }
+    
+    public void initSale() {
+        String sql = "select * from ventas";
+        connection.executeQuery(sql);
+        connection.toNext();
+    }
+    
+    public void setSale() {
+        customerName = connection.getString("nombre");
+        date = connection.getString("fecha");
+        totalSale = connection.getInteger("total_venta");
     }
     
     public boolean findCustomer(int customerID) {
@@ -124,7 +118,7 @@ public class SalesModel {
         String find = "select * from clientes where id_cliente = '"+customerID+"';";
         connection.executeQuery(find);
         connection.toNext();
-        if(customerID == connection.getInteger("id_cliente")) {
+        if(customerID == connection.getInteger("id_proveedor")) {
             isFound = true;
             customerName = connection.getString("nombre");
         }
@@ -139,20 +133,29 @@ public class SalesModel {
         if(productID == connection.getInteger("id_producto")) {
             isFound = true;
             product = connection.getString("producto");
-            saleCost = connection.getFloat("precio_venta");
+            saleCost = connection.getInteger("precio_venta");
         }
         return isFound;
     }
     
-    public void addProduct(int customerID, String name, int productID, String product, float saleCost, 
-                           int quantity, int vat, float subtotal, float total) {
-        vat = 15;
-        subtotal = ((float)(saleCost * 0.15) + saleCost);
-        total = subtotal * quantity;
-        String add = "insert into ventas (id_cliente, nombre, id_producto, producto, precio_venta, cantidad, iva, subtotal, total)"
-                   + "values ('"+customerID+"', '"+name+"', '"+productID+"', '"+product+"', '"+saleCost+"', '"+quantity+"', '"+vat+"', '"+subtotal+"', '"+total+"');";
+    public void addProduct(String product, int quantity, int saleCost) {
+        initValues();
+        saleID = connection.getInteger("id_venta");
+        connection.toLast();
+        saleID = 7;
+        totalProduct = quantity * saleCost;
+        String add = "insert into detalle_ventas(id_venta, producto, cantidad, precio_venta, total_producto)"
+                   + "values ('"+saleID+"', '"+product+"', '"+quantity+"', '"+saleCost+"', '"+totalProduct+"');";
         connection.executeUpdate(add);
         initValues();
-         tableModel.addRow(new Object []{productID, product, saleCost, quantity, subtotal});
+        firstTable.addRow(new Object [] {saleID, product, quantity, saleCost, totalProduct});
+    }
+    
+    public void addPurchase(String customerName, int totalSale) { 
+        date = day.toString();
+        String add = "insert into ventas(nombre, fecha, total_venta)" + "values ('"+customerName+"', '"+date+"', '"+totalSale+"');";
+        connection.executeUpdate(add);
+        initSale();
+        secondTable.addRow(new Object[] {customerName, date, totalSale});
     }
 }

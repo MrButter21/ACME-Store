@@ -1,6 +1,6 @@
 package models;
 
-import sogc.MySQLConnection;
+import sogc.MyBearyConnection;
 
 public class LoginModel {    
     public String name;
@@ -9,7 +9,7 @@ public class LoginModel {
     public String level;
     public String status;
     
-    MySQLConnection connection = new MySQLConnection(3306, "localhost", "store", "root", "");
+    MyBearyConnection connection = new MyBearyConnection(3306, "localhost", "store", "root", "");
 
     public String getName() {
         return name;

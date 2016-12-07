@@ -41,6 +41,12 @@ public class MainController implements ActionListener {
         
         this.mainView.jmi_purchases.addActionListener(this);
         this.mainView.jmi_sales.addActionListener(this);
+        
+        this.mainView.jmi_customersReport.addActionListener(this);
+        this.mainView.jmi_suppliersReport.addActionListener(this);
+        this.mainView.jmi_productsReport.addActionListener(this);
+        this.mainView.jmi_purchasesReport.addActionListener(this);
+        this.mainView.jmi_salesReport.addActionListener(this);
    
         initView();
     }
@@ -65,6 +71,17 @@ public class MainController implements ActionListener {
             purchasesPane();
         else if(x.getSource() == mainView.jmi_sales)
             salesPane();
+        
+        else if(x.getSource() == mainView.jmi_customersReport)
+            customersReport();
+        else if(x.getSource() == mainView.jmi_suppliersReport)
+            suppliersReport();
+        else if(x.getSource() == mainView.jmi_productsReport)
+            productsReport();
+        else if(x.getSource() == mainView.jmi_purchasesReport)
+            purchasesReport();
+        else if(x.getSource() == mainView.jmi_salesReport)
+            salesReport();
     }
     
     public void initView() {
@@ -134,6 +151,36 @@ public class MainController implements ActionListener {
     
     public void salesPane() {
         mainView.setContentPane(paneArray[6]);
+        mainView.revalidate();
+        mainView.repaint();
+    }
+    
+    public void customersReport() {
+        mainView.setContentPane(paneArray[7]);
+        mainView.revalidate();
+        mainView.repaint();
+    }
+    
+    public void suppliersReport() {
+        mainView.setContentPane(paneArray[8]);
+        mainView.revalidate();
+        mainView.repaint();
+    }
+    
+    public void productsReport() {
+        mainView.setContentPane(paneArray[9]);
+        mainView.revalidate();
+        mainView.repaint();
+    }
+    
+    public void purchasesReport() {
+        mainView.setContentPane(paneArray[10]);
+        mainView.revalidate();
+        mainView.repaint();
+    }
+    
+    public void salesReport() {
+        mainView.setContentPane(paneArray[11]);
         mainView.revalidate();
         mainView.repaint();
     }

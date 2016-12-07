@@ -35,8 +35,28 @@ public class Main {
         SalesModel salesModel = new SalesModel();
         SalesView salesView = new SalesView();
         SalesController salesController = new SalesController(salesModel, salesView);
+        
+        CustomersReportModel customersReportModel = new CustomersReportModel();
+        CustomersReportView customersReportView = new CustomersReportView();
+        CustomersReportController customersReportController = new CustomersReportController(customersReportModel, customersReportView);
+        
+        SuppliersReportModel suppliersReportModel = new SuppliersReportModel();
+        SuppliersReportView suppliersReportView = new SuppliersReportView();
+        SuppliersReportController suppliersReportController = new SuppliersReportController(suppliersReportModel, suppliersReportView);
+        
+        ProductsReportModel productsReportModel = new ProductsReportModel();
+        ProductsReportView productsReportView = new ProductsReportView();
+        ProductsReportController productsReportController = new ProductsReportController(productsReportModel, productsReportView);
+        
+        PurchasesReportModel purchasesReportModel = new PurchasesReportModel();
+        PurchasesReportView purchasesReportView = new PurchasesReportView();
+        PurchasesReportController purchasesReportController = new PurchasesReportController(purchasesReportModel, purchasesReportView);
+        
+        SalesReportModel salesReportModel = new SalesReportModel();
+        SalesReportView salesReportView = new SalesReportView();
+        SalesReportController salesReportController = new SalesReportController(salesReportModel, salesReportView);
                 
-        JPanel paneArray[] = new JPanel[7];
+        JPanel paneArray[] = new JPanel[12];
         paneArray[0] = loginView;
         paneArray[1] = usersView;
         
@@ -46,6 +66,12 @@ public class Main {
         
         paneArray[5] = purchasesView;
         paneArray[6] = salesView;
+        
+        paneArray[7] = customersReportView;
+        paneArray[8] = suppliersReportView;
+        paneArray[9] = productsReportView;
+        paneArray[10] = purchasesReportView;
+        paneArray[11] = salesReportView;
                 
         MainModel mainModel = new MainModel();
         MainView mainView = new MainView();

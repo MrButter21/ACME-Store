@@ -2,6 +2,7 @@ package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 import models.PurchasesModel;
@@ -10,14 +11,19 @@ import views.PurchasesView;
 public class PurchasesController implements ActionListener {
     PurchasesModel purchasesModel;
     PurchasesView purchasesView;
+    Date day = new Date();
 
     public PurchasesController(PurchasesModel purchasesModel, PurchasesView purchasesView) {
         this.purchasesModel = purchasesModel;
         this.purchasesView = purchasesView;
+        this.day = day;
         
         this.purchasesView.jb_findSupplier.addActionListener(this);
         this.purchasesView.jb_findProduct.addActionListener(this);
+        
         this.purchasesView.jb_add.addActionListener(this);
+        this.purchasesView.jb_remove.addActionListener(this);
+        
         this.purchasesView.jb_new.addActionListener(this);
         this.purchasesView.jb_save.addActionListener(this);
         
@@ -31,8 +37,12 @@ public class PurchasesController implements ActionListener {
             findSupplier();
         else if(a.getSource() == purchasesView.jb_findProduct)
             findProduct();
+        
         else if(a.getSource() == purchasesView.jb_add)
             addProduct();
+        else if(a.getSource() == purchasesView.jb_remove)
+            removeProduct();
+        
         else if(a.getSource() == purchasesView.jb_new)
             newPurchase();
         else if(a.getSource() == purchasesView.jb_save)
@@ -42,6 +52,9 @@ public class PurchasesController implements ActionListener {
     public void initView() {
         purchasesModel.initValues();
         purchasesModel.setValues();
+        
+        purchasesModel.initPurchase();
+        purchasesModel.setPurchase();
     }
     
     public void findSupplier() {
@@ -80,24 +93,29 @@ public class PurchasesController implements ActionListener {
     }
     
     public void addProduct() {
-        try {
-        int supplierID = Integer.parseInt(purchasesView.jtf_supplierID.getText());
-        String name = purchasesView.jtf_name.getText();
-        int productID = Integer.parseInt(purchasesView.jtf_productID.getText());
-        String product = purchasesView.jtf_product.getText();
-        float purchaseCost = Float.parseFloat(purchasesView.jtf_purchaseCost.getText());
-        int quantity = Integer.parseInt(purchasesView.jtf_quantity.getText());
-        int vat = 15;
-        float subtotal = ((float)(purchaseCost * 0.15) + purchaseCost);
-        float total = subtotal * quantity;
-        purchasesView.jtf_vat.setText("" + vat + " %" + " =" + " 0.15");
-        purchasesView.jtf_sub.setText("" + subtotal + " $");
-        purchasesView.jtf_total.setText("" + total + " $");
-        purchasesModel.addProduct(supplierID, name, productID, product, purchaseCost, quantity, vat, subtotal, total);
+        try {           
+            int purchaseID = purchasesModel.getPurchaseID();           
+            String product = purchasesView.jtf_product.getText();
+            int quantity = Integer.parseInt(purchasesView.jtf_quantity.getText());
+            int purchaseCost = Integer.parseInt(purchasesView.jtf_purchaseCost.getText());
+            int totalProduct = (quantity * purchaseCost);
+            
+            purchasesView.jtf_date.setText(day.toString());
+            purchasesView.jtf_sub.setText("" + totalProduct);
+            purchasesModel.addProduct(product, quantity, purchaseCost);           
         }
         catch(NumberFormatException nfe) {
             JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+    public void removeProduct() {
+        int tableRow = purchasesView.jt_detailPurchases.getSelectedRows().length;
+        for(int i = 0; i < tableRow; i++) {
+            purchasesModel.firstTable.removeRow(purchasesView.jt_detailPurchases.getSelectedRow());
+        }
+        int sub = Integer.parseInt(purchasesView.jt_detailPurchases.getValueAt(purchasesView.jt_detailPurchases.getModel().getRowCount() -1, 4) + "");
+        purchasesView.jtf_sub.setText("" + sub);
     }
     
     public void newPurchase() {
@@ -108,27 +126,39 @@ public class PurchasesController implements ActionListener {
         purchasesView.jtf_product.setText("");
         purchasesView.jtf_purchaseCost.setText("");
         purchasesView.jtf_quantity.setText("");
-        purchasesView.jtf_vat.setText("");
+        purchasesView.jtf_date.setText("");
         purchasesView.jtf_sub.setText("");
         purchasesView.jtf_total.setText("");
-        for(int i = 0; i < purchasesModel.tableModel.getRowCount(); i++) {
-            purchasesModel.tableModel.removeRow(i);
+        for(int i = 0; i < purchasesModel.firstTable.getRowCount(); i++) {
+            purchasesModel.firstTable.removeRow(i);
+            i -= 1;
+        }
+        for(int i = 0; i < purchasesModel.secondTable.getColumnCount(); i++) {
+            purchasesModel.secondTable.removeRow(i);
             i -= 1;
         }
     }
     
     public void savePurchase() {
-        if(purchasesView.jtf_supplierID.getText().isEmpty() || purchasesView.jtf_name.getText().isEmpty() ||
-        purchasesView.jtf_productID.getText().isEmpty() || purchasesView.jtf_product.getText().isEmpty() ||
-        purchasesView.jtf_purchaseCost.getText().isEmpty() || purchasesView.jtf_quantity.getText().isEmpty() ||
-        purchasesView.jtf_vat.getText().isEmpty() || purchasesView.jtf_sub.getText().isEmpty() || purchasesView.jtf_total.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "No puedes efectuar la compra. Existen campos vacíos.", "Error", JOptionPane.ERROR_MESSAGE);
+        try {
+            JOptionPane.showMessageDialog(null, "Tu compra se ha realizado exitosamente.", "Compra completada", JOptionPane.INFORMATION_MESSAGE);
+            String supplierName = purchasesView.jtf_name.getText();
+            String date = purchasesView.jtf_date.getText();
+            int totalPurchase = 0;
+            for(int i = 0; i < purchasesView.jt_detailPurchases.getRowCount(); i++) {
+                int total = Integer.parseInt(purchasesView.jt_detailPurchases.getValueAt(i, 4) + "");
+                totalPurchase += total;
+            }
+            purchasesView.jtf_total.setText("" + totalPurchase);
+            purchasesModel.addPurchase(supplierName, totalPurchase);
         }
-        else
-        JOptionPane.showMessageDialog(null, "Tu compra se ha realizado exitosamente.", "Compra completada", JOptionPane.INFORMATION_MESSAGE);
+        catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Valor numérico incorrecto o campo vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     private void showRecords() {
-        purchasesView.jt_purchasesTable.setModel(purchasesModel.tableModel);
+        purchasesView.jt_detailPurchases.setModel(purchasesModel.firstTable);
+        purchasesView.jt_purchases.setModel(purchasesModel.secondTable);
     }
 }

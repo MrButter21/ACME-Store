@@ -2,7 +2,7 @@ package models;
 
 import javax.swing.table.DefaultTableModel;
 
-import sogc.MySQLConnection;
+import sogc.MyBearyConnection;
 
 public class UsersModel {    
     String name;
@@ -13,7 +13,7 @@ public class UsersModel {
     
     public DefaultTableModel tableModel = new DefaultTableModel(new String [] {"Usuario", "Nivel", "Estado"}, 0);
     
-    MySQLConnection connection = new MySQLConnection(3306, "localhost", "store", "root", "");
+    MyBearyConnection connection = new MyBearyConnection(3306, "localhost", "store", "root", "");
 
     public String getName() {
         return name;
@@ -90,12 +90,15 @@ public class UsersModel {
     }
     
     public void populateTable() {
+        initValues();
         for(int i = 0; i < tableModel.getRowCount(); i++) {
             tableModel.removeRow(i);
             i -= 1;
         }
-        Object fields[] = new Object[]{"MrButter22", "Administrador", "Activo"};
-        tableModel.addRow(fields);
+        connection.toNext();
+        connection.toFirst();
+        setValues();
+        tableModel.addRow(new Object []{user, level, status});
         while(connection.toNext()) {
             setValues();
             tableModel.addRow(new Object []{user, level, status});           

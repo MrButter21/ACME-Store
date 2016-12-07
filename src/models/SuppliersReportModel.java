@@ -4,7 +4,7 @@ import javax.swing.table.DefaultTableModel;
 
 import sogc.MyBearyConnection;
 
-public class SuppliersModel {
+public class SuppliersReportModel {
     int supplierID;    
     int number;
     
@@ -130,28 +130,10 @@ public class SuppliersModel {
         email = connection.getString("email");
     }
     
-    public void moveToFirst() {
-        connection.toFirst();
-        setValues();
-    }
-    
-    public void moveToPrevious() {
-        connection.toPrevious();
-        setValues();
-    }
-    
-    public void moveToNext() {
+    public void findSupplier(String name) {
+        String find = "select id_proveedor, nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto, telefono, email from proveedores where nombre like '"+name+"%' order by id_proveedor;";
+        connection.executeQuery(find);
         connection.toNext();
-        setValues();
-    }
-    
-    public void moveToLast() {
-        connection.toLast();
-        setValues();
-    }
-    
-    public void populateTable() {
-        initValues();
         for(int i = 0; i < tableModel.getRowCount(); i++) {
             tableModel.removeRow(i);
             i -= 1;
@@ -166,38 +148,37 @@ public class SuppliersModel {
         }
     }
     
-    public void addSupplier(String name, String rfc, String street, int number, String suburb, String city,
-                            String state, String contact, String phone, String email) {
-        String add = "insert into proveedores (nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto, telefono, email)"
-                   + "values ('"+name+"', '"+rfc+"', '"+street+"', '"+number+"', '"+suburb+"', '"+city+"', '"+state+"', '"+contact+"', '"+phone+"', '"+email+"');";
-        connection.executeUpdate(add);
-        initValues();
-        populateTable();
-    }
-    
-    public void editSupplier(int supplierID, String name, String rfc, String street, int number, String suburb,
-                             String city, String state, String contact, String phone, String email) {
-        String edit = "update proveedores set nombre ='"+name+"', rfc ='"+rfc+"', calle ='"+street+"', numero ='"+number+"', colonia ='"+suburb+"', ciudad ='"+city+"', estado ='"+state+"', nombre_contacto ='"+contact+"', telefono ='"+phone+"', email ='"+email+"'" + "where id_proveedor =" +supplierID;
-        connection.executeUpdate(edit);
-        initValues();
-        populateTable();
-    }
-    
-    public void removeSupplier(int supplierID) {
-        String remove = "delete from proveedores where id_proveedor =" +supplierID;
-        connection.executeUpdate(remove);
-        initValues();
-        populateTable();
-    }
-    
-    public boolean findSupplier(String name) {
-        boolean isFound = false;
-        String find = "select * from proveedores where nombre = '"+name+"';";
+    public void findCity(String city) {
+        String find = "select id_proveedor, nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto, telefono, email from proveedores where ciudad like '"+city+"%' order by id_proveedor;";
         connection.executeQuery(find);
         connection.toNext();
-        if(name.equals(connection.getString("nombre"))) {
-            isFound = true;
+        for(int i = 0; i < tableModel.getRowCount(); i++) {
+            tableModel.removeRow(i);
+            i -= 1;
         }
-        return isFound;
+        connection.toNext();
+        connection.toFirst();
+        setValues();
+        tableModel.addRow(new Object []{supplierID, name, rfc, street, number, suburb, city, state, contact, phone, email});
+        while(connection.toNext()) {
+            setValues();
+            tableModel.addRow(new Object []{supplierID, name, rfc, street, number, suburb, city, state, contact, phone, email});           
+        }
     }
+    
+    public void allSuppliers() {
+        initValues();
+        for(int i = 0; i < tableModel.getRowCount(); i++) {
+            tableModel.removeRow(i);
+            i -= 1;
+        }
+        connection.toNext();
+        connection.toFirst();
+        setValues();
+        tableModel.addRow(new Object []{supplierID, name, rfc, street, number, suburb, city, state, contact, phone, email});
+        while(connection.toNext()) {
+            setValues();
+            tableModel.addRow(new Object []{supplierID, name, rfc, street, number, suburb, city, state, contact, phone, email});           
+        }
+    } 
 }

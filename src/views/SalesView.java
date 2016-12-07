@@ -34,7 +34,7 @@ public class SalesView extends javax.swing.JPanel {
         jtf_name = new javax.swing.JTextField();
         jb_findCustomer = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jt_salesTable = new javax.swing.JTable();
+        jt_detailSales = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jtf_productID = new javax.swing.JTextField();
@@ -46,13 +46,16 @@ public class SalesView extends javax.swing.JPanel {
         jtf_quantity = new javax.swing.JTextField();
         jb_add = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        jtf_vat = new javax.swing.JTextField();
+        jtf_date = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jtf_sub = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jtf_total = new javax.swing.JTextField();
         jb_save = new javax.swing.JButton();
         jb_new = new javax.swing.JButton();
+        jb_remove = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jt_sales = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(63, 81, 181));
 
@@ -88,13 +91,11 @@ public class SalesView extends javax.swing.JPanel {
         jScrollPane1.setBorder(null);
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jt_salesTable.setBackground(new java.awt.Color(48, 63, 159));
-        jt_salesTable.setFont(new java.awt.Font("Trebuchet MS", 0, 10)); // NOI18N
-        jt_salesTable.setForeground(new java.awt.Color(255, 255, 255));
-        jt_salesTable.setModel(new javax.swing.table.DefaultTableModel(
+        jt_detailSales.setBackground(new java.awt.Color(48, 63, 159));
+        jt_detailSales.setFont(new java.awt.Font("Trebuchet MS", 0, 10)); // NOI18N
+        jt_detailSales.setForeground(new java.awt.Color(255, 255, 255));
+        jt_detailSales.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -103,13 +104,13 @@ public class SalesView extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID Producto", "Producto", "Precio de venta", "Cantidad", "Subtotal"
+                "ID Venta", "Producto", "Cantidad", "Precio de venta", "Subtotal"
             }
         ));
-        jt_salesTable.setGridColor(new java.awt.Color(63, 81, 181));
-        jt_salesTable.setSelectionBackground(new java.awt.Color(63, 81, 181));
-        jt_salesTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setViewportView(jt_salesTable);
+        jt_detailSales.setGridColor(new java.awt.Color(63, 81, 181));
+        jt_detailSales.setSelectionBackground(new java.awt.Color(63, 81, 181));
+        jt_detailSales.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(jt_detailSales);
 
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -164,12 +165,12 @@ public class SalesView extends javax.swing.JPanel {
 
         jLabel12.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("IVA");
+        jLabel12.setText("Fecha");
 
-        jtf_vat.setBackground(new java.awt.Color(48, 63, 159));
-        jtf_vat.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_vat.setForeground(new java.awt.Color(255, 255, 255));
-        jtf_vat.setBorder(null);
+        jtf_date.setBackground(new java.awt.Color(48, 63, 159));
+        jtf_date.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jtf_date.setForeground(new java.awt.Color(255, 255, 255));
+        jtf_date.setBorder(null);
 
         jLabel13.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -192,7 +193,7 @@ public class SalesView extends javax.swing.JPanel {
         jb_save.setBackground(new java.awt.Color(48, 63, 159));
         jb_save.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jb_save.setForeground(new java.awt.Color(255, 255, 255));
-        jb_save.setText("Cerrar venta");
+        jb_save.setText("Finalizar venta");
         jb_save.setBorder(null);
         jb_save.setBorderPainted(false);
 
@@ -203,6 +204,32 @@ public class SalesView extends javax.swing.JPanel {
         jb_new.setBorder(null);
         jb_new.setBorderPainted(false);
 
+        jb_remove.setBackground(new java.awt.Color(63, 81, 181));
+        jb_remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/remove_product.png"))); // NOI18N
+        jb_remove.setBorder(null);
+        jb_remove.setBorderPainted(false);
+
+        jScrollPane2.setBorder(null);
+        jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
+
+        jt_sales.setBackground(new java.awt.Color(48, 63, 159));
+        jt_sales.setFont(new java.awt.Font("Trebuchet MS", 0, 10)); // NOI18N
+        jt_sales.setForeground(new java.awt.Color(255, 255, 255));
+        jt_sales.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Nombre", "Fecha", "Total"
+            }
+        ));
+        jt_sales.setGridColor(new java.awt.Color(63, 81, 181));
+        jt_sales.setSelectionBackground(new java.awt.Color(63, 81, 181));
+        jt_sales.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setViewportView(jt_sales);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -211,26 +238,27 @@ public class SalesView extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane2)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtf_saleCost))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jtf_saleCost, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jtf_product))
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jtf_productID))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jtf_customerID))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jtf_name))
@@ -244,19 +272,22 @@ public class SalesView extends javax.swing.JPanel {
                             .addComponent(jb_add)
                             .addComponent(jb_findCustomer))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel13)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jtf_sub))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel12)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jtf_vat, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, Short.MAX_VALUE))
-                                .addComponent(jb_save, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jb_new, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jb_save, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jb_new, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jb_remove)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtf_date))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtf_sub))))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -307,21 +338,25 @@ public class SalesView extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
                             .addComponent(jtf_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jb_add)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jb_add)
+                            .addComponent(jb_remove)
                             .addComponent(jLabel12)
-                            .addComponent(jtf_vat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jtf_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jtf_sub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel13))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(jtf_sub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jtf_total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(jtf_total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -343,13 +378,17 @@ public class SalesView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JButton jb_add;
     public javax.swing.JButton jb_findCustomer;
     public javax.swing.JButton jb_findProduct;
     public javax.swing.JButton jb_new;
+    public javax.swing.JButton jb_remove;
     public javax.swing.JButton jb_save;
-    public javax.swing.JTable jt_salesTable;
+    public javax.swing.JTable jt_detailSales;
+    public javax.swing.JTable jt_sales;
     public javax.swing.JTextField jtf_customerID;
+    public javax.swing.JTextField jtf_date;
     public javax.swing.JTextField jtf_name;
     public javax.swing.JTextField jtf_product;
     public javax.swing.JTextField jtf_productID;
@@ -357,6 +396,5 @@ public class SalesView extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_saleCost;
     public javax.swing.JTextField jtf_sub;
     public javax.swing.JTextField jtf_total;
-    public javax.swing.JTextField jtf_vat;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,14 +4,14 @@ import javax.swing.table.DefaultTableModel;
 
 import sogc.MyBearyConnection;
 
-public class ProductsModel {
+public class ProductsReportModel {
     int productID;    
     int stock;
     
     String product;
     String description;
-    float purchaseCost;
-    float saleCost;
+    int purchaseCost;
+    int saleCost;
     
     public DefaultTableModel tableModel = new DefaultTableModel(new String [] {"ID", "Producto", "Descripcion", "$ Compra", "$ Venta", "Stock"}, 0);
     
@@ -41,19 +41,19 @@ public class ProductsModel {
         this.description = description;
     }
 
-    public float getPurchaseCost() {
+    public int getPurchaseCost() {
         return purchaseCost;
     }
 
-    public void setPurchaseCost(float purchaseCost) {
+    public void setPurchaseCost(int purchaseCost) {
         this.purchaseCost = purchaseCost;
     }
 
-    public float getSaleCost() {
+    public int getSaleCost() {
         return saleCost;
     }
 
-    public void setSaleCost(float saleCost) {
+    public void setSaleCost(int saleCost) {
         this.saleCost = saleCost;
     }
 
@@ -75,33 +75,15 @@ public class ProductsModel {
         productID = connection.getInteger("id_producto");
         product = connection.getString("producto");
         description = connection.getString("descripcion");
-        purchaseCost = connection.getFloat("precio_compra");
-        saleCost = connection.getFloat("precio_venta");
+        purchaseCost = connection.getInteger("precio_compra");
+        saleCost = connection.getInteger("precio_venta");
         stock = connection.getInteger("existencias");
     }
     
-    public void moveToFirst() {
-        connection.toFirst();
-        setValues();
-    }
-    
-    public void moveToPrevious() {
-        connection.toPrevious();
-        setValues();
-    }
-    
-    public void moveToNext() {
+    public void findProduct(String product) {
+        String find = "select id_producto, producto, descripcion, precio_compra, precio_venta, existencias from productos where producto like '"+product+"%' order by id_producto;";
+        connection.executeQuery(find);
         connection.toNext();
-        setValues();
-    }
-    
-    public void moveToLast() {
-        connection.toLast();
-        setValues();
-    }
- 
-    public void populateTable() {
-        initValues();
         for(int i = 0; i < tableModel.getRowCount(); i++) {
             tableModel.removeRow(i);
             i -= 1;
@@ -116,36 +98,37 @@ public class ProductsModel {
         }
     }
     
-    public void addProduct(String product, String description, float purchaseCost, float saleCost, int stock) {
-        String add = "insert into productos (producto, descripcion, precio_compra, precio_venta, existencias)"
-                   + "values ('"+product+"', '"+description+"', '"+purchaseCost+"', '"+saleCost+"', '"+stock+"');";
-        connection.executeUpdate(add);
-        initValues();
-        populateTable();
-    }
-    
-    public void editProduct(int productID, String product, String description, float purchaseCost, float saleCost, int stock) {
-        String edit = "update productos set producto ='"+product+"', descripcion ='"+description+"', precio_compra ='"+purchaseCost+"', precio_venta ='"+saleCost+"', existencias ='"+stock+"'" + "where id_producto =" +productID;
-        connection.executeUpdate(edit);
-        initValues();
-        populateTable();
-    }
-    
-    public void removeProduct(int productID) {
-        String remove = "delete from productos where id_producto =" +productID;
-        connection.executeUpdate(remove);
-        initValues();
-        populateTable();
-    }
-    
-    public boolean findProduct(String product) {
-        boolean isFound = false;
-        String find = "select * from productos where producto = '"+product+"';";
+    public void findDesc(String description) {
+        String find = "select id_producto, producto, descripcion, precio_compra, precio_venta, existencias from productos where descripcion like '"+description+"%' order by id_producto;";
         connection.executeQuery(find);
         connection.toNext();
-        if(product.equals(connection.getString("producto"))) {
-            isFound = true;
+        for(int i = 0; i < tableModel.getRowCount(); i++) {
+            tableModel.removeRow(i);
+            i -= 1;
         }
-        return isFound;
+        connection.toNext();
+        connection.toFirst();
+        setValues();
+        tableModel.addRow(new Object []{productID, product, description, purchaseCost, saleCost, stock});
+        while(connection.toNext()) {
+            setValues();
+            tableModel.addRow(new Object []{productID, product, description, purchaseCost, saleCost, stock});           
+        }
     }
+    
+    public void allProducts() {
+        initValues();
+        for(int i = 0; i < tableModel.getRowCount(); i++) {
+            tableModel.removeRow(i);
+            i -= 1;
+        }
+        connection.toNext();
+        connection.toFirst();
+        setValues();
+        tableModel.addRow(new Object []{productID, product, description, purchaseCost, saleCost, stock});
+        while(connection.toNext()) {
+            setValues();
+            tableModel.addRow(new Object []{productID, product, description, purchaseCost, saleCost, stock});           
+        }
+    } 
 }
