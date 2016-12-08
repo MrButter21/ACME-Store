@@ -6,14 +6,20 @@ import javax.swing.JOptionPane;
 
 import models.ProductsModel;
 import views.ProductsView;
+import views.PurchasesView;
+import views.SalesView;
 
 public class ProductsController implements ActionListener {
     ProductsModel productsModel;
     ProductsView productsView;
+    PurchasesView purchasesView;
+    SalesView salesView;
 
-    public ProductsController(ProductsModel productsModel, ProductsView productsView) {
+    public ProductsController(ProductsModel productsModel, ProductsView productsView, PurchasesView purchasesView, SalesView salesView) {
         this.productsModel = productsModel;
         this.productsView = productsView;
+        this.purchasesView = purchasesView;
+        this.salesView = salesView;
         
         this.productsView.jb_first.addActionListener(this);
         this.productsView.jb_previous.addActionListener(this);
@@ -24,6 +30,8 @@ public class ProductsController implements ActionListener {
         this.productsView.jb_edit.addActionListener(this);
         this.productsView.jb_remove.addActionListener(this);
         this.productsView.jb_find.addActionListener(this);
+        
+        this.productsView.jb_update.addActionListener(this);
         
         initView();
         showRecords();
@@ -39,6 +47,7 @@ public class ProductsController implements ActionListener {
             nextProduct();
         else if(a.getSource() == productsView.jb_last)
             lastProduct();
+        
         else if(a.getSource() == productsView.jb_add)
             addProduct();
         else if(a.getSource() == productsView.jb_edit)
@@ -47,6 +56,9 @@ public class ProductsController implements ActionListener {
             removeProduct();
         else if(a.getSource() == productsView.jb_find)
             findProduct();
+        
+        else if(a.getSource() == productsView.jb_update)
+            updateTable();
     }
     
     public void initView() {
@@ -87,8 +99,8 @@ public class ProductsController implements ActionListener {
         try {
             String product = productsView.jtf_product.getText();
             String description = productsView.jtf_description.getText();
-            float purchaseCost = Float.parseFloat(productsView.jtf_purchaseCost.getText());
-            float saleCost = Float.parseFloat(productsView.jtf_saleCost.getText());
+            int purchaseCost = Integer.parseInt(productsView.jtf_purchaseCost.getText());
+            int saleCost = Integer.parseInt(productsView.jtf_saleCost.getText());
             int stock = Integer.parseInt(productsView.jtf_stock.getText());
             productsModel.addProduct(product, description, purchaseCost, saleCost, stock);
             productsModel.setValues();
@@ -104,8 +116,8 @@ public class ProductsController implements ActionListener {
             int productID = Integer.parseInt(productsView.jtf_id.getText());
             String product = productsView.jtf_product.getText();
             String description = productsView.jtf_description.getText();
-            float purchaseCost = Float.parseFloat(productsView.jtf_purchaseCost.getText());
-            float saleCost = Float.parseFloat(productsView.jtf_saleCost.getText());
+            int purchaseCost = Integer.parseInt(productsView.jtf_purchaseCost.getText());
+            int saleCost = Integer.parseInt(productsView.jtf_saleCost.getText());
             int stock = Integer.parseInt(productsView.jtf_stock.getText());
             productsModel.editProduct(productID, product, description, purchaseCost, saleCost, stock);
             productsModel.setValues();
@@ -126,6 +138,35 @@ public class ProductsController implements ActionListener {
             JOptionPane.showMessageDialog(null, product + " existe en la base de datos", "Resultados", JOptionPane.INFORMATION_MESSAGE);
         else 
             JOptionPane.showMessageDialog(null, product + " no existe en la base de datos. Intente de nuevo", "Aviso", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    public void updateForPurchase() {
+        String product = purchasesView.jtf_product.getText();
+        int quantity = Integer.parseInt(purchasesView.jtf_quantity.getText());
+        int stock = productsModel.getStock();
+        stock = stock - quantity;
+        productsModel.updateForPurchase(product, quantity, stock);
+        productsModel.setValues();
+        showValues();
+    }
+    
+    public void updateForSale() {
+        String product = salesView.jtf_product.getText();
+        int quantity = Integer.parseInt(salesView.jtf_quantity.getText());
+        int stock = productsModel.getStock();
+        stock = stock - quantity;
+        productsModel.updateForSale(product, quantity, stock);
+        productsModel.setValues();
+        showValues();
+    }
+    
+    public void updateTable() {
+        for(int i = 0; i < productsModel.tableModel.getRowCount(); i++) {
+            productsModel.tableModel.removeRow(i);
+            i -= 1;
+        }
+        updateForPurchase();
+        updateForSale();
     }
     
     private void showRecords() {

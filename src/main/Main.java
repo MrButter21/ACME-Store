@@ -26,7 +26,6 @@ public class Main {
         
         ProductsModel productsModel = new ProductsModel();
         ProductsView productsView = new ProductsView();
-        ProductsController productsController = new ProductsController(productsModel, productsView);
         
         PurchasesModel purchasesModel = new PurchasesModel();
         PurchasesView purchasesView = new PurchasesView();
@@ -35,6 +34,8 @@ public class Main {
         SalesModel salesModel = new SalesModel();
         SalesView salesView = new SalesView();
         SalesController salesController = new SalesController(salesModel, salesView);
+        
+        ProductsController productsController = new ProductsController(productsModel, productsView, purchasesView, salesView);
         
         CustomersReportModel customersReportModel = new CustomersReportModel();
         CustomersReportView customersReportView = new CustomersReportView();

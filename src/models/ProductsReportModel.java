@@ -1,5 +1,11 @@
 package models;
 
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
+
 import javax.swing.table.DefaultTableModel;
 
 import sogc.MyBearyConnection;

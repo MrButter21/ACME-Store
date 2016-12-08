@@ -98,9 +98,9 @@ create table if not exists compras (
 engine = InnoDB default charset = utf8;
 
 /*Registro de usuarios: */
-insert into usuarios(nombre, usuario, clave, nivel, estado) values('Rubi', 'rubi1522', md5('rubi1522'), 'Administrador', 'Activo'),
-('Sergio', 'MrButter22', md5('Alessandra2000'), 'Administrador', 'Activo'), ('Alessandra', 'dead_alex12', md5('EssO&R456'), 'Cliente', 'Activo'),
-('Oswaldo', 'BearyOsi4', md5('OSI00123'), 'Cliente', 'Inactivo'), ('Sarah', 'sarah101', md5('CornPops'), 'Proveedor', 'Inactivo');
+insert into usuarios(nombre, usuario, clave, nivel, estado) values('Rubi', 'rubi1522', 'rubi1522', 'Administrador', 'Activo'),
+('Sergio', 'MrButter22', 'Alessandra2000', 'Administrador', 'Activo'), ('Alessandra', 'dead_alex12', 'EssO&R456', 'Cliente', 'Activo'),
+('Oswaldo', 'BearyOsi4', 'OSI00123', 'Cliente', 'Inactivo'), ('Sarah', 'sarah101', 'CornPops', 'Proveedor', 'Inactivo');
 
 /*Registro de proveedores: */
 insert into proveedores(nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto, telefono, email)

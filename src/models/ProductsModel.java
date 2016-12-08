@@ -6,13 +6,13 @@ import sogc.MyBearyConnection;
 
 public class ProductsModel {
     int productID;    
-    int stock;
-    
+    int stock;    
     String product;
     String description;
-    float purchaseCost;
-    float saleCost;
-    
+    int purchaseCost;
+    int saleCost;
+    int quantity;
+       
     public DefaultTableModel tableModel = new DefaultTableModel(new String [] {"ID", "Producto", "Descripcion", "$ Compra", "$ Venta", "Stock"}, 0);
     
     MyBearyConnection connection = new MyBearyConnection(3306, "localhost", "store", "root", "");
@@ -41,19 +41,19 @@ public class ProductsModel {
         this.description = description;
     }
 
-    public float getPurchaseCost() {
+    public int getPurchaseCost() {
         return purchaseCost;
     }
 
-    public void setPurchaseCost(float purchaseCost) {
+    public void setPurchaseCost(int purchaseCost) {
         this.purchaseCost = purchaseCost;
     }
 
-    public float getSaleCost() {
+    public int getSaleCost() {
         return saleCost;
     }
 
-    public void setSaleCost(float saleCost) {
+    public void setSaleCost(int saleCost) {
         this.saleCost = saleCost;
     }
 
@@ -63,6 +63,14 @@ public class ProductsModel {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
     
     public void initValues() {
@@ -75,8 +83,8 @@ public class ProductsModel {
         productID = connection.getInteger("id_producto");
         product = connection.getString("producto");
         description = connection.getString("descripcion");
-        purchaseCost = connection.getFloat("precio_compra");
-        saleCost = connection.getFloat("precio_venta");
+        purchaseCost = connection.getInteger("precio_compra");
+        saleCost = connection.getInteger("precio_venta");
         stock = connection.getInteger("existencias");
     }
     
@@ -116,7 +124,23 @@ public class ProductsModel {
         }
     }
     
-    public void addProduct(String product, String description, float purchaseCost, float saleCost, int stock) {
+    public void updateForPurchase(String product, int quantity, int stock) {        
+        initValues();       
+        String update = "update productos set existencias ='"+stock+"' where producto like '"+product+"';";
+        connection.executeUpdate(update);
+        initValues();
+        populateTable();
+    }
+    
+    public void updateForSale(String product, int quantity, int stock) {
+        initValues();
+        String update = "update productos set existencias ='"+stock+"' where producto like '"+product+"';";
+        connection.executeUpdate(update);
+        initValues();
+        populateTable();
+    }
+    
+    public void addProduct(String product, String description, int purchaseCost, int saleCost, int stock) {
         String add = "insert into productos (producto, descripcion, precio_compra, precio_venta, existencias)"
                    + "values ('"+product+"', '"+description+"', '"+purchaseCost+"', '"+saleCost+"', '"+stock+"');";
         connection.executeUpdate(add);
@@ -124,7 +148,7 @@ public class ProductsModel {
         populateTable();
     }
     
-    public void editProduct(int productID, String product, String description, float purchaseCost, float saleCost, int stock) {
+    public void editProduct(int productID, String product, String description, int purchaseCost, int saleCost, int stock) {
         String edit = "update productos set producto ='"+product+"', descripcion ='"+description+"', precio_compra ='"+purchaseCost+"', precio_venta ='"+saleCost+"', existencias ='"+stock+"'" + "where id_producto =" +productID;
         connection.executeUpdate(edit);
         initValues();
