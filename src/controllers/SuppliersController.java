@@ -132,10 +132,7 @@ public class SuppliersController implements ActionListener {
     }
     
     public void removeSupplier() {
-        int supplierID = Integer.parseInt(suppliersView.jtf_id.getText());
-        suppliersModel.removeSupplier(supplierID);
-        suppliersModel.setValues();
-        showValues();
+        JOptionPane.showMessageDialog(null, "No puedes eliminar este campo. Tiene registros existentes de compras y ventas ", "Aviso", JOptionPane.WARNING_MESSAGE);
     }
     
     public void findSupplier() {

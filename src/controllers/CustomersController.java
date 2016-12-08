@@ -135,10 +135,7 @@ public class CustomersController implements ActionListener {
     }
     
     public void removeCustomer() {
-        int customerID = Integer.parseInt(customersView.jtf_id.getText());
-        customersModel.removeCustomer(customerID);
-        customersModel.setValues();
-        showValues();
+        JOptionPane.showMessageDialog(null, "No puedes eliminar este campo. Tiene registros existentes de compras y ventas ", "Aviso", JOptionPane.WARNING_MESSAGE);
     }
     
     public void findCustomer() {

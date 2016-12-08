@@ -117,10 +117,7 @@ public class ProductsController implements ActionListener {
     }
     
     public void removeProduct() {
-        int productID = Integer.parseInt(productsView.jtf_id.getText());
-        productsModel.removeProduct(productID);
-        productsModel.setValues();
-        showValues();
+        JOptionPane.showMessageDialog(null, "No puedes eliminar este campo. Tiene registros existentes de compras y ventas ", "Aviso", JOptionPane.WARNING_MESSAGE);
     }
     
     public void findProduct() {
